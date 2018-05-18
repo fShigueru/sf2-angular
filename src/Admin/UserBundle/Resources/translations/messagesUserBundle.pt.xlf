@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>txt.sistema.menu.top.right.usuario.ver</source>
+                <target>Dados do usuário</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>txt.sistema.menu.top.right.usuario.editar.dados</source>
+                <target>Editar dados do usuário</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>txt.sistema.menu.top.right.usuario.editar.senha</source>
+                <target>Editar senha do usuário</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>form.email</source>
+                <target>Email:</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.senha.update.error</source>
+                <target>Erro ao atualizar a senha.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.usuario.update.error</source>
+                <target>Erro ao atualizar os dados do usuário, por favor, verifique se todos os dados foram enviados, e se a senha esta correta.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.registrar</source>
+                <target>Cadastrar um novo usuário para acesso ao sistema.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>txt.sistema.menu.top.right.cadastrar.usuario</source>
+                <target>Cadastrar usuário</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>txt.sistema.menu.top.right.cadastrar.usuario.confirmado</source>
+                <target>Usuário cadastrado</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.usuario.lista</source>
+                <target>Listar usuários do sistema</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.role.alterar</source>
+                <target>Nível de acesso.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.message.update.role.sucesso</source>
+                <target>Nível de acesso atualizado com sucesso.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.message.update.role.error</source>
+                <target>Nível de acesso atualizado com sucesso.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>title.usuario</source>
+                <target>{0} Usuário | {1} Usuários</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

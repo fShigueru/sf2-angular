@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.banner</source>
+                <target>{0} Banner | {1} Banners</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.listar</source>
+                <target>Listar Banners</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.editar</source>
+                <target>Editar Banner</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.excluir</source>
+                <target>Excluir Banner</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.cadastrar</source>
+                <target>Cadastrar Banner</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.modal.descricao.new</source>
+                <target>Esse módulo é responsavel por cadastrar um Banner para o site, a localização vai depender da escolha da opção Local.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.cadastro.error</source>
+                <target>Erro ao cadastrar um Banner.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.cadastro.sucesso</source>
+                <target>Banner title cadastrado com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.edit.error</source>
+                <target>Erro ao atualizar o Banner: title.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.edit.sucesso</source>
+                <target>Banner: title atualizado com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.delete.error</source>
+                <target>Erro ao excluir o Banner: title</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.delete.sucesso</source>
+                <target>Banner title excluido com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.modal.title.banner.new</source>
+                <target>Cadastrar um Banner para o site.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

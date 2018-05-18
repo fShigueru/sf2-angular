@@ -1,0 +1,30 @@
+<footer>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="footer_logo   wow fadeInUp animated">
+                        <img src="{{ asset('logo.png', 'img_home')  | imagine_filter('logo_footer') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center wow fadeInUp animated">
+                    <div class="social"></div>
+                    {{ knp_menu_render('footer') }}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="copyright_text   wow fadeInUp animated">
+                        <p>&copy; {{ configuracao.valor("titulo.site.resumido") }} {{ "now"|date("Y") }}. {{ 'label.direitos.reservados'|transchoice(0,{}, 'messages') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

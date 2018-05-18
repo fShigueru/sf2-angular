@@ -1,0 +1,45 @@
+<div class="form-horizontal form-label-left">
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel">
+                    <a class="panel-heading collapsed" role="tab" id="abaOpcaoData" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h4 class="panel-title">{{ 'title.opcao.filtro.data'|transchoice(0,{}, 'messagesCommonBundle') }}</h4>
+                    </a>
+                    <div id="collapseTwo" class="panel-collapse collapse {{ entity.dtPublicacao != null ? 'in' : '' }}  " role="tabpanel" aria-labelledby="abaOpcaoData">
+                        <div class="panel-body">
+                            <div class="form-horizontal form-label-left">
+                                <div class="form-group {{ form.dtPublicacao.vars.required ? 'item' : '' }}">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.dtPublicacao.vars.id }}">{{ form_label(form.dtPublicacao) }}
+                                        {{ form.dtPublicacao.vars.required ? '<span class="required">*</span>' : '' }}
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 col-xs-6">
+                                        {{ form_row(form.dtPublicacao, { 'label': false }) }}
+                                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                        <span id="inputSuccess2Status2" class="sr-only">(success)</span>
+                                    </div>
+                                    <br clear="all" />
+                                </div>
+                            </div>
+                            <div class="form-horizontal form-label-left">
+                                <div class="form-group {{ form.dtExpiracao.vars.required ? 'item' : '' }}">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.dtExpiracao.vars.id }}">{{ form_label(form.dtExpiracao) }}
+                                        {{ form.dtExpiracao.vars.required ? '<span class="required">*</span>' : '' }}
+                                    </label>
+                                    <div class="col-md-7 col-sm-7 col-xs-12">
+                                        {{ form_row(form.dtExpiracao, { 'label': false }) }}
+                                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                        <span id="inputSuccess3Status3" class="sr-only">(success)</span>
+                                    </div>
+                                    <br clear="all" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="ifFiltroData" id="ifFiltroData" value="{{ entity.dtPublicacao != null ? 1 : 0 }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

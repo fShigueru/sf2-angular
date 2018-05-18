@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ configuracao.valor("titulo.site.resumido") }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AppBundle/Resources/public/css/sobre.css'
+    filter='cssrewrite'
+    output='css/sobre/style.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+{#
+combine=true
+filter='uglifycss'
+#}
+{% block body %}
+
+    {{ include('@App/Elements/menu.html.twig') }}
+
+    <div id="sobre" class="interna">
+
+    </div>
+
+    <div id="footer">
+        {# Footer #}
+        {{ include('@App/Elements/footer.html.twig') }}
+    </div> <!--#fifth-->
+
+{% endblock %}

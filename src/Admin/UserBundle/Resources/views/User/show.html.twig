@@ -1,0 +1,39 @@
+{% extends 'AdminCommonBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.sistema.menu.top.right.usuario.ver'|transchoice(0,{}, 'messagesUserBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminUserBundle/Resources/public/sass/style_user_show.scss'
+    '@AdminCommonBundle/Resources/public/css/select/select2.min.css'
+    combine=true
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/user/user/style_show.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    {% block fos_user_content %}
+        {% include "AdminUserBundle:User:show_content.html.twig" %}
+    {% endblock fos_user_content %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminUserBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AdminCommonBundle/Resources/public/js/select/select2.full.js'
+    '@AdminUserBundle/Resources/public/js/user/script_show.js'
+    output='js/cms/user/user/script_show.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

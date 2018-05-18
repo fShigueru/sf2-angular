@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.tag.home.description</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.tag.home.keywords</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>menu.home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>menu.contato</source>
+                <target>Contato</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>menu.servico</source>
+                <target>{0} Serviço | {1} Serviços</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>menu.trabalho</source>
+                <target>{0} Trabalho | {1} Trabalhos</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>label.contato.nome</source>
+                <target>Nome</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>label.contato.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>label.contato.telefone</source>
+                <target>Telefone ou Celular</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>label.contato.mensagem</source>
+                <target>Nos conte oque precisa.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>label.contato.enviar</source>
+                <target>Nos conte oque precisa.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>label.servicos.design</source>
+                <target>Design</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>label.servicos.design.descricao</source>
+                <target>Reproduzimos todas as suas necessidades em uma forma interativa e com fácil navegação, com layouts modernos e bonitos.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>label.servicos.site</source>
+                <target>{0} Site | {1} Sites</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>label.servicos.site.descricao</source>
+                <target>Todos os nossos sites já vem com a tecnologia responsivo, assim podem ser acessados pelos diversos dispositivos usados hoje no mercado.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>label.servicos.cms</source>
+                <target>CMS</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>label.servicos.cms.descricao</source>
+                <target>Hoje em dia as informações são muito dinâmicas, por isso nossos sites já vem com gerenciador de conteúdo que atende as necessidade do site.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>label.servicos.branding</source>
+                <target>Branding</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>label.servicos.branding.descricao</source>
+                <target>Uma marca hoje é uma das coisas mais importantes na web, se você quer ter o seu site e não tem uma marca, não se preocupe, aqui você vai ter.</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>label.servicos.seo</source>
+                <target>SEO</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>label.servicos.seo.descricao</source>
+                <target>Nossos sites são planejados e estruturados com as melhores tecnologias, para que seja visto como uma ferramenta de qualidade pelos buscadores mais usados.</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>label.como.desenvolvemos</source>
+                <target>Como desenvolvemos os nossos sites?</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>label.ultimos.trabalhos</source>
+                <target>Últimos trabalhos</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>label.ultimos.trabalhos.descricao</source>
+                <target>{0} Queremos o seu site aqui no nosso portfólio. | {1} Caso queira saber como funciona nosso Gerenciador de conteúdo, entre em | {2} contato </target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>label.visitar.site</source>
+                <target>Visitar site</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>label.port.default</source>
+                <target>O seu site aqui!</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>label.port.vidales</source>
+                <target>Vidales Apartments Rio</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>label.port.vidales.descricao</source>
+                <target>Site responsivo e CMS</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>label.quer.saber.mais</source>
+                <target>QUER SABER MAIS? ENTRE EM CONTATO CONOSCO!</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>label.fale.conosco</source>
+                <target>Fale conosco!</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>label.direitos.reservados</source>
+                <target>Todos os direitos reservados</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>label.como.desenvolvemos.descricao.um</source>
+                <target>{0} Entender as necessidades | {1} Buscar requisitos | {2} Planejar</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>label.como.desenvolvemos.descricao.dois</source>
+                <target>{0} Validação | {1} Design | {2} Desenvolvimento</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>label.como.desenvolvemos.descricao.tres</source>
+                <target>Seu site pronto!</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>label.solucoes.web</source>
+                <target>Soluções para Web</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>label.contato.sucesso</source>
+                <target>E-mail enviado com sucesso. Obrigado, aguarde que em breve entraremos em contato.</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>title.url.formato</source>
+                <target>http://www.minhaurl.com.br</target>
+            </trans-unit>
+            <!--
+            <target>{0} %qtdSuites% Suite | {1} %qtdSuites% Suites</target>
+            -->
+        </body>
+    </file>
+</xliff>

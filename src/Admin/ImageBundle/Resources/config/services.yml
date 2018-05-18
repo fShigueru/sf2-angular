@@ -1,0 +1,5 @@
+services:
+  admin_image.service.image:
+    class: Admin\ImageBundle\Service\ImageService
+    arguments:
+      - "@admin_storage.local_uploader"

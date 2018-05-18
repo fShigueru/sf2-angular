@@ -1,0 +1,42 @@
+.navbar-header h1 {font-size: 23px; width: 380px; color: #B9C5D2; font-weight: normal; line-height: 11px;}
+.navbar-default .navbar-nav>li>a {
+  color: $verde_padrao;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  color: $branco;
+}
+.navbar-default {
+  background: $azul_padrao;
+  border-bottom: 2px solid $verde_padrao;
+}
+header{background: url(/bundles/app/images/home/bg.png) $azul_padrao;}
+.navbar-brand {padding: 2px 15px;}
+.navbar-brand>img {width: 58px;}
+.image_logo_bg {}
+.image_logo_bg img{margin: 87px auto 0;}
+.home_text{
+  margin-top: -158px;
+  margin-bottom: 84px;
+}
+.home_text h2{
+  color: $verde_padrao;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 13px;
+}
+.home_text p{
+  color: $azul_padrao;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.home_text img{}
+.scroll_down{
+  padding-bottom: 50px;
+}
+.scroll_down h4{
+  font-size: 12px;
+  color: $verde_padrao;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}

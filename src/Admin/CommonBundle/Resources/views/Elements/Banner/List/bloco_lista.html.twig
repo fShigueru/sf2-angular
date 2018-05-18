@@ -1,0 +1,146 @@
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                <small>
+                    {{ 'title.listar'|transchoice(0,{}, 'messagesBannerCommonBundle') }}
+                </small>
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    {% if habilitado %}
+                        <a href="{{ path('banner_new') }}" class="btn btn-dark" style="color: #ffffff;" title=" {{ 'title.cadastrar'|transchoice(0,{}, 'messagesBannerCommonBundle') }}">
+                            {{ 'title.cadastrar'|transchoice(0,{}, 'messagesBannerCommonBundle') }}
+                        </a>
+                    {% endif %}
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Settings 1</a>
+                                </li>
+                                <li><a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="example" class="table table-striped responsive-utilities jambo_table">
+                        <thead>
+                        <tr class="headings">
+                            <th>
+                                <input type="checkbox" class="tableflat">
+                            </th>
+                            <th>{{ 'title.titulo'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.local'|transchoice(0,{}, 'messagesLocalBannerCommonBundle') }}</th>
+                            <th>{{ 'title.link'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.image'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.status'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.data.publicacao'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.data.expiracao'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th>{{ 'title.data.criado'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                            <th class="sorting_dis no-link last"><span class="nobr">{{ 'txt.acao'|transchoice(1,{}, 'messagesCommonBundle') }}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entity in entities %}
+                            <tr class="even pointer">
+                                <td class="a-center ">
+                                    <input type="checkbox" class="tableflat">
+                                </td>
+                                <td>
+                                   {{ entity.titulo }}
+                                </td>
+                                <td>
+                                    {{ entity.local.local }}
+                                </td>
+                                <td>
+                                    <a href="{{ entity.url }}" title="{{ 'title.link'|transchoice(0,{}, 'messagesCommonBundle') }}">
+                                        <i class="fa fa-link"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    {% if entity.image.image is defined %}
+                                        {% if entity.image.image != "" %}
+                                            <button type="button" class="btn btn-primary modal-{{ entity.id }}" data-toggle="modal" data-target=".bs-example-modal-sm" style="display: none;"></button>
+
+                                            {% for proporcao in entity.image.proporcoes %}
+                                                {% set runtimeConfig = {"relative_resize": {"scale": proporcao.scale},
+                                                "crop": {"start": [proporcao.cropStartLeft,proporcao.cropStartTop], "size": [proporcao.cropSizeW,proporcao.cropSizeH]}
+                                                } %}
+                                                <a href="javascript://ver foto" data-toggle="tooltip" data-placement="top" title="{{ 'title.image.click.ver'|transchoice(0,{}, 'messagesCommonBundle') }}" onclick="openImage({{ entity.id }},'{{ entity.image.image | imagine_filter('banner',runtimeConfig) }}')" >
+                                                    <i class="fa fa-picture-o"></i>
+                                                </a>
+                                            {% endfor %}
+                                        {% else %}
+                                            <i class="fa fa-ban" data-toggle="tooltip" data-placement="top" title="{{ 'title.image.click.ver'|transchoice(0,{}, 'messagesCommonBundle') }}"></i>
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if entity.status == 1 %}
+                                        <button type="button" class="btn btn-success btn-xs">
+                                            {{'txt.publicado'|transchoice(1,{}, 'messagesCommonBundle') }}
+                                        </button>
+                                    {% else %}
+                                        <button type="button" class="btn btn-danger btn-xs">
+                                            {{'txt.rascunho'|transchoice(1,{}, 'messagesCommonBundle') }}
+                                        </button>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if entity.dtPublicacao %}
+                                        {{ entity.dtPublicacao|date('d/m/Y') }}
+                                        <br />
+                                        <small>{{ entity.dtPublicacao|date('H:i:s') }}</small>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if entity.dtExpiracao %}
+                                        {{ entity.dtExpiracao|date('d/m/Y') }}
+                                        <br />
+                                        <small>{{ entity.dtExpiracao|date('H:i:s') }}</small>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if entity.dtCreated %}
+                                        {{ entity.dtCreated|date('d/m/Y') }}
+                                        <br />
+                                        <small>{{ entity.dtCreated|date('H:i:s') }}</small>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ path('banner_edit', { 'id': entity.id }) }}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="{{ 'title.click.editar'|transchoice(0,{}, 'messagesCommonBundle') }}"><i class="fa fa-pencil"></i>
+                                        {{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>

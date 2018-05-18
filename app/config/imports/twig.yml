@@ -1,0 +1,8 @@
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+        configuracao: "@admin_common.service.configuracao"
+        amazon_s3_base_url: "%amazon_s3_base_url%"
+        amazon_s3_bucket_name: "%amazon_s3_bucket_name%"

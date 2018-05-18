@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>message.cadastro.sucesso</source>
+                <target>Página cadastrada com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>message.slug.existe</source>
+                <target>Url amigável existe, por favor, altere diretamente no campo.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>message.error.cadastrar</source>
+                <target>Erro ao cadastrar uma página, por favor verifique se todos os campos obrigatórios foram preenchidos. Se o erro persistir, por favor comunique ao desenvolvedor.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>message.error.pagina.texto.titulo</source>
+                <target>Titulo não pode ser em branco.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>message.error.pagina.texto.slug</source>
+                <target>Url amigável não pode ser enviada em branco.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>message.error.pagina.texto.slug</source>
+                <target>Url amigável não pode ser enviada em branco.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>message.alterado.sucesso</source>
+                <target>Página atualizada com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>message.alterado.error</source>
+                <target>Erro ao atualizar a página, por favor verifique se os campos obrigatórios estão corretos!</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>message.delete.sucesso</source>
+                <target>Página removida com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>message.delete.error</source>
+                <target>Erro ao remover a página!</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

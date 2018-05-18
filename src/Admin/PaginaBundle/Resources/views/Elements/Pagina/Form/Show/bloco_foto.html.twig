@@ -1,0 +1,47 @@
+{% if entity.image is defined %}
+    {% if entity.image.image is not null %}
+        <div class="x_panel wrap-foto">
+            <div class="x_title">
+                <h2>
+                    {{ 'title.image'|transchoice(0,{}, 'messagesCommonBundle') }}
+                </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-sm-9">
+                        <div class="foto">
+                            {% if entity.image.proporcoes is defined %}
+                                {% for proporcao in entity.image.proporcoes %}
+                                    {% set runtimeConfig = {"relative_resize": {"scale": proporcao.scale},
+                                                            "crop": {"start": [proporcao.cropStartLeft,proporcao.cropStartTop], "size": [proporcao.cropSizeW,proporcao.cropSizeH]}
+                                    } %}
+                                    {% set runtimeConfigThumb = {"relative_resize": {"scale": proporcao.scale},
+                                                                 "crop": {"start": [proporcao.cropStartLeft,proporcao.cropStartTop], "size": [proporcao.cropSizeW,proporcao.cropSizeH]},
+                                                                 "thumbnail": {"size": [proporcao.thumbW,proporcao.thumbH], "mode": "outbound"}
+                                    } %}
+                                    {# {"thumbnail": {"size": thumb, "mode": "outbound"}, #}
+                                    <img src="{{ entity.image.image | imagine_filter('pagina',runtimeConfig) }}" alt="" class="img-responsive" />
+                                    <img src="{{ entity.image.image | imagine_filter('pagina_thumb',runtimeConfigThumb) }}" alt="" class="img-responsive" />
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-sm-2">
+                        <a class="btn btn-app fechar" data-toggle="modal" data-target=".modal-delete-foto">
+                            <i class="fa fa-trash"></i> {{ 'txt.excluir'|transchoice(0,{}, 'messagesCommonBundle') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% set modalDeleteFoto = {
+        'title': 'title.excluir.foto',
+        'modal': 'modal-delete-foto',
+        'iconTitle':'fa-trash',
+        'bundle':'messagesCommonBundle',
+        'varClick':'deleteFoto(' ~ entity.id ~ ')',
+        'controller':'NewCtrl'} %}
+        {{ include('@AdminCommon/Elements/modal/modal_p_delete.html.twig', modalDeleteFoto) }}
+    {% endif %}
+{% endif %}

@@ -1,0 +1,41 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, span, a, label, th, td, button, input, select, textarea {font-family: Arial, Helvetica, sans-serif;}
+.form-group .col-xs-12 ul li{list-style: none; color: #E74C3C;}
+.position-icon-usuario {margin-top: 2px; margin-right: 10px;}
+.buscando_cidade { display:none; }
+.selecione_cidade { display:none; }
+.loader { background: url(/bundles/admincommon/images/loader.gif); width: 220px; height: 19px; display: none; margin: 0 auto; }
+.panel_toolbox > li { float: right !important; cursor: pointer; }
+.form-group h6 { color: #CE5454; }
+.tile-stats .count { font-size: 25px; }
+.tile_stats_count .count { font-size: 28px; }
+.image_none { margin-top: 25px; }
+.navbar.nav_title img { margin: 19px 0px 0px 67px; }
+.navbar.nav_title {height: 69px;}
+.navbar.nav_title span {font-size: 20px; color: #fff;}
+.logo.close{ display: none; }
+footer { margin: 0 2px; height: 68px;}
+footer p.pull-right { line-height: 37px; }
+.imagem-none-galeria { margin: 0 auto; padding-top: 4px; display: block; }
+.thumbnail.destaques { height: 240px; }
+.thumbnail.destaques .image { height: 163px; }
+.thumbnail.destaques .image .mask {height: 163px; }
+.navbar.nav_title img.logo.open {margin: 7px 10px 17px 11px;}
+.status.tile-stats .icon.publicado {color: #5cb85c;}
+.status.tile-stats .icon.rascunho {color: #d9534f;}
+.label-info-admin {font-size: 11px;}
+.padding-left-7{padding-left: 7px;}
+.padding-right-7{padding-right: 7px;}
+.padding-top-8{padding-top: 8px;}
+.cursor-pointer {cursor: pointer;}
+.bt-delete-foto {width: 127px;}
+.modal-body form {float: left; margin-right: 3px;}
+.modal-load .loader {display: block;}
+.modal-load .modal-body p {text-align: center; font-size: 27px;}
+.bg-green-admin {background: #1abb9c; border: 1px solid #1abb9c !important;}
+.modal-delete .modal-body #form {float: left;}
+.profile .profile_info{padding:8px 10px 10px;}
+.profile .profile_pic img {margin-top: 6px;}
+.toggle a {cursor: pointer;}
+.form-group .col-md-6.col-sm-6.col-xs-12 ul{position: absolute; top:40px;}
+.form-group-status

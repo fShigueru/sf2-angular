@@ -1,0 +1,56 @@
+<div class="form-horizontal form-label-left">
+    <div class="form-group {{ form.ordem.vars.required ? 'item' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.ordem.vars.id }}">{{ form.ordem.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+            {{ form.ordem.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <span class="fa fa-sort-numeric-desc form-control-feedback left"></span>
+            {{ form_row(form.ordem, { 'label': false }) }}
+        </div>
+    </div>
+</div>
+<div class="form-horizontal form-label-left">
+    <div class="form-group {{ form.titulo.vars.required ? 'item' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.titulo.vars.id }}">{{ form.titulo.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+            {{ form.titulo.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            {{ form_row(form.titulo, { 'label': false }) }}
+            <span class="fa fa-align-left form-control-feedback left" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+<div class="form-horizontal form-label-left">
+    <div class="form-group {{ form.url.vars.required ? 'item' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.url.vars.id }}">{{ form_label(form.url) }}
+            {{ form.url.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <span class="fa fa-link form-control-feedback left"></span>
+            {{ form_row(form.url, { 'label': false }) }}
+            <span class="label label-info label-info-admin">
+                {{ 'title.formato.url'|transchoice(0,{}, 'messagesCommonBundle') }}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="form-horizontal form-label-left">
+    <div class="form-group {{ form.status.vars.required ? 'item' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.status.vars.id }}">{{ form_label(form.status) }}
+            {{ form.status.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            {{ form_row(form.status, { 'label': false }) }}
+        </div>
+    </div>
+</div>
+<div class="form-horizontal form-label-left">
+    <div class="form-group {{ form.target.vars.required ? 'item' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.target.vars.id }}">{{ form_label(form.target) }}
+            {{ form.target.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            {{ form_row(form.target, { 'label': false }) }}
+        </div>
+    </div>
+</div>

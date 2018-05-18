@@ -1,0 +1,122 @@
+liip_imagine:
+    resolvers:
+        profile_photos:
+            web_path:
+                web_root: %kernel.root_dir%/../web
+                cache_prefix: media/cache
+        cache_resolver_aws_s3:
+            aws_s3:
+                client_config:
+                    credentials:
+                        key:    %amazon_aws_key%
+                        secret: %amazon_aws_secret_key%
+                    region: %amazon_s3_region%
+                    version: %amazon_s3_version%
+                get_options:
+                    Scheme: 'https'
+                put_options:
+                    CacheControl: 'max-age=86400'
+                bucket: %amazon_s3_bucket_name%
+
+    loaders:
+        loader_aws_s3_images:
+            stream:
+                # This refers to knp_gaufrette filesystems configuration
+                wrapper: gaufrette://photo/
+
+    filter_sets:
+        cache: ~
+        vitrine:
+            data_loader: loader_aws_s3_images
+            quality: 80
+            format: jpeg
+
+        home:
+            quality: 80
+            format: png
+
+        logo_menu:
+            quality: 100
+            format: png
+            filters:
+                thumbnail: { size: [58, 47], mode: outbound }
+
+        logo_footer:
+            quality: 100
+            format: png
+            filters:
+                thumbnail: { size: [162, 130], mode: outbound }
+
+        imac_home:
+            quality: 50
+            format: png
+            filters:
+                thumbnail: { size: [458, 365], mode: outbound }
+
+        imac_home_topo:
+            quality: 50
+            format: png
+            filters:
+                thumbnail: { size: [830, 503], mode: outbound }
+
+        port:
+            quality: 50
+            format: png
+            filters:
+                thumbnail: { size: [452, 245], mode: outbound }
+
+        port_site_aqui:
+            quality: 50
+            format: jpg
+            filters:
+                thumbnail: { size: [452, 245], mode: outbound }
+
+        test_medium_thumb:
+            data_loader: loader_aws_s3_images
+            #cache: profile_photos
+            quality: 80
+
+        test_small_thumb:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 75
+            filters:
+                thumbnail: { size: [500, 500], mode: outbound }
+
+        crop_medium_thumb:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 75
+            filters:
+                crop: { start: [500, 200], size: [200, 200] }
+
+        pagina:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 75
+
+        pagina_thumb:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 85
+
+        banner:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 75
+
+        logo_menu_admin:
+            quality: 100
+            format: png
+            filters:
+                thumbnail: { size: [58, 47], mode: outbound }
+
+        user:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 100
+
+        user_thumb:
+            data_loader: loader_aws_s3_images
+            #cache: cache_resolver_aws_s3
+            quality: 100

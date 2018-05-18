@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.pagina</source>
+                <target>{0} Página | {1} Páginas</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.cadastrar</source>
+                <target>Cadastrar uma nova página</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.nova</source>
+                <target>Nova página</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.seo</source>
+                <target>SEO da página</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.message.slug</source>
+                <target>Esse campo será preenchido automaticamente apartir do titulo</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.pagina.dados</source>
+                <target>Dados da página</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.pagina.listar</source>
+                <target>Listar página</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.message.slug.duplicado</source>
+                <target>Essa Url amigável deve ser unica, se for igual ao título, já existe outra página com esse título.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.info.pagina</source>
+                <target>Informações da página</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.editar</source>
+                <target>Editar página</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.modal.title.duvida.slug</source>
+                <target>Dúvida sobre Url amigável</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.modal.descricao.duvida.slug</source>
+                <target>
+                    A Url amigável é o nome dado a uma "parte" do link que faz referência a uma página,matéria,noticia ou um produto.
+                    Exemplo: www.meusite.com/pagina/url-amigavel, onde está url-amigavel que ficara a informação desse campo.
+                    A Url amigável normalmente é o mesmo nome do o título, a diferença que não vai ter espaços e sim traços, ela será preenchida automaticamente, quando vc digitar o título.
+                    Atenção! Ela não pode se reperir com outras já cadastradas, se isso ocorrer o sistema ira disparar um aviso.
+                </target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.modal.title.pagina.new</source>
+                <target>Cadastrar uma nova página</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>title.modal.descricao.pagina.new</source>
+                <target>
+                    Esse modulo é responsavel por cadastrar uma nova página. Cadastrando uma nova página, ela podera ser vista no site,
+                    dessa forma você tera a liberdade de alterar o conteudo, assim como título, descrição, imagem, pode definir a data que ela
+                    vai aparecer no site.
+                </target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>title.modal.title.pagina.edit</source>
+                <target>Atualizar uma página</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>title.modal.descricao.pagina.edit</source>
+                <target>
+                    Esse modulo é responsavel por atualizar uma página.
+                </target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>title.pagina.ver.message</source>
+                <target>Esse menu é referente a uma Página, para remover, você precisa acessar essa página.</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>title.pagina.atencao.message</source>
+                <target>Verifique se a página que vai cadastrar já existe.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

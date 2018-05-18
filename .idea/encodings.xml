@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Controller/ConfiguracaoController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Repository/Vitrine/VitrineRepository.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/public/css/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/public/js/common.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/public/js/datepicker/daterangepicker_padrao_pt.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/public/js/exibir_imagem_file.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/public/js/validator/validator.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/views/Configuracao/index.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/views/Vitrine/edit.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/views/Vitrine/index.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Resources/views/Vitrine/new.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/CommonBundle/Service/Validacao/ValidacaoService.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Admin/StorageBundle/Service/PhotoUploaderS3.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/contato-form.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AppBundle/Resources/public/css/contato.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/script.ajax.contato.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/AppBundle/Resources/public/js/script.click.top.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

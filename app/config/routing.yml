@@ -1,0 +1,99 @@
+admin_noticia:
+    resource: "@AdminNoticiaBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_galeria:
+    resource: "@AdminGaleriaBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_image:
+    resource: "@AdminImageBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_menu:
+    resource: "@AdminMenuBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_pagina:
+    resource: "@AdminPaginaBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_storage:
+    resource: "@AdminStorageBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_common:
+    resource: "@AdminCommonBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_endereco:
+    resource: "@AdminEnderecoBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+admin_user:
+    resource: "@AdminUserBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+_errors :
+    resource :  "@TwigBundle/Resources/config/routing/errors.xml"
+    prefix :    /_error
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_security_login:
+    path:      /admin/login
+    defaults:  { _controller: FOSUserBundle:Security:login, _method: POST }
+
+fos_user_security_logout:
+    path:      /admin/logout
+    defaults:  { _controller: FOSUserBundle:Security:logout, _method: POST }
+
+fos_user_profile_show:
+    path:       /admin/profile
+    defaults:  { _controller: FOSUserBundle:Profile:show}
+
+fos_user_profile_edit:
+    path:       /admin/profile/edit
+    defaults:  { _controller: FOSUserBundle:Profile:edit}
+
+fos_user_registration_register:
+    path:      /admin/register
+    defaults:  { _controller: FOSUserBundle:Registration:register }
+
+fos_user_registration_confirmed:
+    path:      /admin/register/confirmed
+    defaults:  { _controller: FOSUserBundle:Registration:confirmed }
+
+fos_user_registration_confirm:
+    path:      /admin/register/confirm
+    defaults:  { _controller: FOSUserBundle:Registration:confirm }
+
+
+fos_user_registration_check_email:
+    path:      /admin/register/check/email
+    defaults:  { _controller: FOSUserBundle:Registration:checkEmail }
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /admin/resetting
+
+fos_user_change_password:
+    path: /admin/profile/edit/password
+    defaults:  { _controller: FOSUserBundle:ChangePassword:changePassword }
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

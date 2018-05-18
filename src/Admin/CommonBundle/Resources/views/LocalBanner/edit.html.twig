@@ -1,0 +1,78 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.editar'|transchoice(0,{}, 'messagesLocalBannerCommonBundle') }} :
+    {{ entity.local }}
+{% endblock %}
+
+{% block body -%}
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.editar'|transchoice(0,{}, 'messagesLocalBannerCommonBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-local-new">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    {{ include('@AdminCommon/Elements/LocalBanner/New/bloco_dados.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ include('@AdminCommon/Elements/LocalBanner/Edit/bloco_action.html.twig') }}
+    {{ form_end(form) }}
+    {#Fim do form#}
+
+    {% set modalDelete = {
+    'title': 'title.excluir.confirmacao',
+    'modal': 'modal-delete',
+    'iconTitle':'fa-trash',
+    'bundle':'messagesCommonBundle',
+    'formOption':'true',
+    'controller':'NewCtrl'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_p_delete.html.twig', modalDelete) }}
+
+    {% set modalLocalBanner = {
+    'title': 'title.cadastrar',
+    'descricao': 'title.modal.descricao.new',
+    'modal': 'modal-duvida-local-new',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesLocalBannerCommonBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalLocalBanner) }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/localbanner/script.js'
+    output='js/cms/localbanner/script_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {#
+    combine=true
+    filter='uglifyjs2'
+    #}
+{% endblock %}

@@ -1,0 +1,7 @@
+services:
+  admin_menu.service.menu:
+    class: Admin\MenuBundle\Service\MenuService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+      - "@translator.default"
+      - "@form.factory"

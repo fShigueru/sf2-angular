@@ -1,0 +1,87 @@
+{% extends 'AdminCommonBundle::layout_list.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.nova'|transchoice(0,{}, 'messagesCommonBundle') }}
+    {{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }}
+{% endblock %}
+
+{% block body -%}
+
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>
+                    {{ 'txt.cidade'|transchoice(1,{}, 'messagesEnderecoBundle') }}
+                </h3>
+            </div>
+
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <a href="{{ path('cidade_new') }}" class="btn btn-dark" style="color: #ffffff;">
+                            {{ 'txt.nova'|transchoice(0,{}, 'messagesCommonBundle') }} {{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }}
+                        </a>
+                        <!--<h2>Daily active users <small>Sessions</small></h2>-->
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="example" class="table table-striped responsive-utilities jambo_table">
+                            <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" class="tableflat">
+                                </th>
+                                <th>{{ 'txt.codigo'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                                <th>{{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }}</th>
+                                <th>{{ 'txt.estado'|transchoice(0,{}, 'messagesEnderecoBundle') }}</th>
+                                <th class="sorting_dis no-link last">
+                                    <span class="nobr">
+                                        {{ 'txt.acao'|transchoice(1,{}, 'messagesCommonBundle') }}
+                                    </span>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="tableflat">
+                                    </td>
+                                    <td>{{ entity.id }}</td>
+                                    <td>{{ entity.nome }}</td>
+                                    <td>{{ entity.estado.sigla }}</td>
+                                    <td>
+                                        <a href="{{ path('cidade_edit', { 'id': entity.id }) }}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="{{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }} {{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }}"><i class="fa fa-pencil"></i> Edit </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+
+{% endblock %}

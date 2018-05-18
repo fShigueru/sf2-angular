@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.galeria</source>
+                <target>{0} Galeria | {1} Galerias</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.quantidade.images</source>
+                <target>Antes de tudo, adicione a quantidade de imagens para sua galeria.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.galeria.new</source>
+                <target>Cadastrar uma nova galeria</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.galeria.vincular</source>
+                <target>Vincular a galeria</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.galeria.vincular.com</source>
+                <target>Vincular a galeria com</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.galeria.vincular.com.registro</source>
+                <target>Vincular a galeria com o registro</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.galeria.vincular.aonde</source>
+                <target>Aonde você vai exibir sua galeria?</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.galeria.informacao</source>
+                <target>Tútulo da sua galeria (essa informação será usada internamente) </target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.lista</source>
+                <target>Lista de galerias </target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.notblank</source>
+                <target>Título é obrigatório </target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.dt.publicacao.notblank</source>
+                <target>A data de publicação é obrigatória</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.dt.expiracao.notblank</source>
+                <target>A data de expiração é obrigatória</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.new.sucesso</source>
+                <target>Galeria: title, cadastrada com sucesso.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>title.new.error</source>
+                <target>Erro ao cadastrar a galeria.</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>title.edit.sucesso</source>
+                <target>Galeria: title, atualizada com sucesso.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>title.edit.error</source>
+                <target>Erro ao atualizar a galeria: title.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>title.delete.sucesso</source>
+                <target>Galeria: title, removida com sucesso.</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>title.delete.error</source>
+                <target>Erro ao remover a galeria: title.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>title.file.empty</source>
+                <target>Você não pode cadastrar uma galeria sem imagens.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>title.modal.title.galeria.image</source>
+                <target>Alterar imagem da galeria: title.</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>title.galeria.edit</source>
+                <target>Editar galeria: title</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>title.galeria.cadastrar</source>
+                <target>Cadastrar Galeria</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>title.galeria.list</source>
+                <target>Listar Galerias</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>title.modal.title.galeria.new</source>
+                <target>
+                    Cadastrar uma nova galeria.
+                </target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>title.modal.descricao.galeria.new</source>
+                <target>
+                    Esse módulo é responsavel por criação de galerias. Essas galerias podem conter um número limite de imagens,
+                    que em cada uma podemos definir titulo e descrição.
+                    A galeria é algo independente, podemos vincular ela com uma página, notícia, home e etc.
+                </target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>title.modal.title.galeria.duvida.quantidade</source>
+                <target>
+                    Definir a quantidade de imagens da galeria.
+                </target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>title.modal.descricao.galeria.duvida.quantidade</source>
+                <target>
+                    Por esse campo que definimos a quantidade de imagens que podemos ter na galeria.
+                    Logo após inserir o valor e clicar em enviar, a página vai recarregar com novas opções de imagens.
+                    Por favor para o melhor desempenho do sistema, insira apenas a quantidade necessária.
+                </target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>title.modal.title.galeria.duvida.vincular</source>
+                <target>
+                    Vincular a galeria a um determinado módulo.
+                </target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>title.modal.descricao.galeria.duvida.vincular</source>
+                <target>
+                    Essa opção é uma das mais importantes, porque será aqui que vamos definir aonde a galeria será exibida.
+                    A Galeria é independente, assim podemos cadastrar e vincular ela com uma uma página de notícias ou na home, dependendo da sua necessidade.
+                </target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>title.imagem.galeria</source>
+                <target>
+                    Imagens da galeria. Quantidade : qtde
+                </target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>title.modal.title.galeria.duvida.imagens</source>
+                <target>
+                    Cadastrar imagens para a galeria
+                </target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>title.modal.descricao.galeria.duvida.imagens</source>
+                <target>
+                    Selecione uma imagem, defina o angulo dela e corte, dessa forma já teremos uma imagem adaptada a nossa galeria, sem ter o perigo de prejudicar o layout do site.
+                </target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>title.modal.title.galeria.edit</source>
+                <target>
+                    Editar uma galeria.
+                </target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>title.modal.descricao.galeria.edit</source>
+                <target>
+                   Você pode atualizar uma galeria já cadastrada, inserindo novas imagens caso seja necessário.
+                </target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>title.imagens.edit</source>
+                <target>
+                    Imagens já cadastradas. Total qtde
+                </target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,2 @@
+.vitrine-image-lista.ativo{padding: 10px; background-color:  #1ABB9C; border: 1px solid rgba(35, 170, 141, 0.9);}
+.vitrine-image-lista.inativo{padding: 10px; background-color:  rgba(231, 76, 60, 0.88); border: 1px solid rgba(231, 76, 60, 0.88);}

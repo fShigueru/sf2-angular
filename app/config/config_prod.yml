@@ -1,0 +1,44 @@
+imports:
+    - { resource: config.yml }
+
+#framework:
+#    validation:
+#        cache: validator.mapping.cache.apc
+#    serializer:
+#        cache: serializer.mapping.cache.apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+            channels :    [!persist,!delete,!update,!user]
+
+        persist:
+            type: stream
+            path: %kernel.logs_dir%/%kernel.environment%.persist_prod.log
+            level: debug
+            channels: [persist]
+        delete:
+            type: stream
+            path: %kernel.logs_dir%/%kernel.environment%.delete_prod.log
+            level: debug
+            channels: [delete]
+        update:
+            type: stream
+            path: %kernel.logs_dir%/%kernel.environment%.update_prod.log
+            level: debug
+            channels: [update]
+        user:
+            type: stream
+            path: %kernel.logs_dir%/%kernel.environment%.user_prod.log
+            level: debug
+            channels: [user]
+
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        console:
+            type:  console

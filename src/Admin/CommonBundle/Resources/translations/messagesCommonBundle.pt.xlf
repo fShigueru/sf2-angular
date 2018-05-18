@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>txt.nome</source>
+                <target>{0} Nome | {1} Nomes</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>txt.codigo</source>
+                <target>{0} Código | {1} Códigos</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>txt.acao</source>
+                <target>{0} Ação | {1} Ações</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>txt.lista</source>
+                <target>{0} Lista | {1} Listas</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>txt.novo</source>
+                <target>{0} Novo | {1} Novos</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>txt.nova</source>
+                <target>{0} Nova | {1} Novas</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>txt.exibir</source>
+                <target>Exibir</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>txt.ver</source>
+                <target>Ver</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>txt.editar</source>
+                <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>txt.excluir</source>
+                <target>Excluir</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>txt.voltar</source>
+                <target>Voltar</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>txt.sigla</source>
+                <target>{0} Sigla | {1} Siglas</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>txt.descricao</source>
+                <target>{0} Descrição | {1} Descrições</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>txt.numero</source>
+                <target>{0} Numero | {1} Numeros</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>txt.complemento</source>
+                <target>Complemento</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>txt.cep</source>
+                <target>CEP</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>txt.voltar.lista</source>
+                <target>Voltar para a lista</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>txt.gravar</source>
+                <target>Gravar</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>title.pt_BR</source>
+                <target>Título em Português</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>title.en</source>
+                <target>Título em inglês</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>title.status</source>
+                <target>Status</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>title.buscar</source>
+                <target>Buscar</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>title.cadastrar</source>
+                <target>Cadastrar</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>title.fechar</source>
+                <target>Fechar</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>txt.select</source>
+                <target>-- Selecione --</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>txt.ativo</source>
+                <target>Ativo</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>txt.inativo</source>
+                <target>Inativo</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>txt.cadastrado.em</source>
+                <target>Cadastrado em</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>txt.publicado</source>
+                <target>Publicado</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>txt.rascunho</source>
+                <target>Rascunho</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>title.ver.destaque</source>
+                <target>{0} Ver o destaque | {1} Ver os destaques</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>title.remover</source>
+                <target>Remover</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>title.url</source>
+                <target>Url</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>title.dica</source>
+                <target>{0} Dica | {1} Dicas</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>title.upload.mb.max</source>
+                <target>{0} O arquivo enviado é muito grande, arquivo enviado %enviado% e valor máximo esperado %esperado% | {1} Os arquivos enviados são grandes, arquivo enviado %enviado% e valor máximo esperado %esperado% </target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>title.upload.mb.min</source>
+                <target>{0} O arquivo enviado é muito pequeno, arquivo enviado %enviado% e valor mínimo esperado %esperado% | {1} Os arquivos enviados são pequenos, arquivo enviado %enviado% e valor mínimo esperado %esperado% </target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>title.editar</source>
+                <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>title.titulo</source>
+                <target>{0} Título | {1} Títulos</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>title.data.publicacao</source>
+                <target>Data de publicação</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>title.data.expiracao</source>
+                <target>Data de expiração</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>title.url.abrir</source>
+                <target>Abrir página como</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>title.opcao.filtro.data</source>
+                <target>Definir data para publicação e expiração</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>title.opcao.aba.nova</source>
+                <target>Abrir em outra aba</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>title.opcao.aba.mesma</source>
+                <target>Abrir na mesma aba</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>title.ordem</source>
+                <target>Ordem</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>title.configuracao</source>
+                <target>{0} Configuração | {1} Configurações</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>title.configuracao.lista</source>
+                <target>Lista de configurações</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>title.configuracao.nova</source>
+                <target>Nova configuração</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>title.configuracao.edit</source>
+                <target>Editar configuração</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>title.configuracao.excluir</source>
+                <target>Excluir configuração</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>title.chave</source>
+                <target>Chave</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>title.valor</source>
+                <target>Valor</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>title.configuracao.descricao.msg</source>
+                <target>Essa descrição é apenas para informar na hora da alteração</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>title.configuracao.cadastro.sucesso</source>
+                <target>Configuração cadastrada com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>title.configuracao.cadastro.error</source>
+                <target>Erro ao cadastrar uma configuração!</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>title.configuracao.update.sucesso</source>
+                <target>Configuração atualizada com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>title.configuracao.update.error</source>
+                <target>Erro ao atualizar uma configuração!</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>title.configuracao.excluir.sucesso</source>
+                <target>Configuração excluida com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>title.configuracao.excluir.error</source>
+                <target>Erro ao excluir uma configuração!</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>title.permissao.negada</source>
+                <target>Você não ter permissão para realizar essa operação</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>title.cadastrado.data.em</source>
+                <target>Cadastrado em</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>title.numero.simplificado</source>
+                <target>nº</target>
+            </trans-unit>
+            <trans-unit id="64">
+                <source>title.ver.mais</source>
+                <target>Ver mais</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>title.messages.error.image.largura.maior</source>
+                <target>A largura da imagem é maior que o esperado, largura enviada %enviado%px, largura esperada %esperado%px</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>title.messages.error.image.largura.menor</source>
+                <target>A largura da imagem é menor que o esperado, largura enviada %enviado%px, largura esperada %esperado%px</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>title.messages.error.image.altura.maior</source>
+                <target>A altura da imagem é maior que o esperado, altura enviada %enviado%px, altura esperada %esperado%px</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>title.messages.error.image.altura.menor</source>
+                <target>A altura da imagem é menor que o esperado, altura enviada %enviado%px, altura esperada %esperado%px</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>title.messages.error.image.empty</source>
+                <target>Por favor, envie uma imagem</target>
+            </trans-unit>
+            <trans-unit id="70">
+                <source>title.imagem.atual</source>
+                <target>Imagem atual</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>title.messages.image.largura.altura</source>
+                <target>Largura %largura%px x altura %altura%px</target>
+            </trans-unit>
+            <trans-unit id="72">
+                <source>title.salvar</source>
+                <target>Salvar</target>
+            </trans-unit>
+            <trans-unit id="73">
+                <source>title.descricao</source>
+                <target>{0} Descrição | {1} Descrições</target>
+            </trans-unit>
+            <trans-unit id="74">
+                <source>title.keyWord</source>
+                <target>{0} Palavra chave | {1} Palavras chave</target>
+            </trans-unit>
+            <trans-unit id="75">
+                <source>title.slug</source>
+                <target>Url amigável</target>
+            </trans-unit>
+            <trans-unit id="76">
+                <source>title.sub</source>
+                <target>Sub Título</target>
+            </trans-unit>
+            <trans-unit id="77">
+                <source>title.image</source>
+                <target>{0} Imagem | {1} Imagens</target>
+            </trans-unit>
+            <trans-unit id="78">
+                <source>title.image.selecionar</source>
+                <target>{0} Selecionar imagem | {1} Selecionar imagens</target>
+            </trans-unit>
+            <trans-unit id="79">
+                <source>title.link</source>
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="80">
+                <source>title.image.click.ver</source>
+                <target>Click para visualizar a imagem.</target>
+            </trans-unit>
+            <trans-unit id="81">
+                <source>title.data.criado</source>
+                <target>Data de criação.</target>
+            </trans-unit>
+            <trans-unit id="82">
+                <source>title.click.ver</source>
+                <target>Click para ver todos os detalhes</target>
+            </trans-unit>
+            <trans-unit id="83">
+                <source>title.click.editar</source>
+                <target>Click para editar.</target>
+            </trans-unit>
+            <trans-unit id="84">
+                <source>title.help</source>
+                <target>Help.</target>
+            </trans-unit>
+            <trans-unit id="85">
+                <source>title.modulo.oque.faz</source>
+                <target>Oque esse módulo faz</target>
+            </trans-unit>
+            <trans-unit id="86">
+                <source>title.excluir.foto</source>
+                <target>Você tem certeza que deseja excluir essa imagem?</target>
+            </trans-unit>
+            <trans-unit id="87">
+                <source>title.sim</source>
+                <target>Sim</target>
+            </trans-unit>
+            <trans-unit id="88">
+                <source>title.nao</source>
+                <target>Não</target>
+            </trans-unit>
+            <trans-unit id="89">
+                <source>title.excluir.confirmacao</source>
+                <target>Você tem certeza que quer excluir esse registro?</target>
+            </trans-unit>
+            <trans-unit id="90">
+                <source>title.formato.url</source>
+                <target>Formato url: http://www.teste.com.br</target>
+            </trans-unit>
+            <trans-unit id="91">
+                <source>title.aguarde</source>
+                <target>Aguarde...</target>
+            </trans-unit>
+            <trans-unit id="92">
+                <source>title.atencao</source>
+                <target>Atenção</target>
+            </trans-unit>
+            <trans-unit id="93">
+                <source>title.imagem.tamanho</source>
+                <target>Tamanho da imagem</target>
+            </trans-unit>
+            <trans-unit id="94">
+                <source>title.cortar</source>
+                <target>Cortar</target>
+            </trans-unit>
+            <trans-unit id="95">
+                <source>title.desbloquear</source>
+                <target>Desbloquear</target>
+            </trans-unit>
+            <trans-unit id="96">
+                <source>title.width</source>
+                <target>Width(Largura)</target>
+            </trans-unit>
+            <trans-unit id="97">
+                <source>title.height</source>
+                <target>Height(Altura)</target>
+            </trans-unit>
+            <trans-unit id="98">
+                <source>title.url.formato</source>
+                <target>http://www.minhaurl.com.br</target>
+            </trans-unit>
+            <trans-unit id="99">
+                <source>title.sobrenome</source>
+                <target>{0} Sobrenome | {1} Sobrenome</target>
+            </trans-unit>
+            <trans-unit id="100">
+                <source>title.perfil</source>
+                <target>Perfil</target>
+            </trans-unit>
+            <trans-unit id="101">
+                <source>title.ativo</source>
+                <target>Ativo</target>
+            </trans-unit>
+            <trans-unit id="102">
+                <source>title.inativo</source>
+                <target>Inativo</target>
+            </trans-unit>
+            <trans-unit id="103">
+                <source>title.alterar.status</source>
+                <target>Você deseja alterar o status do usuário?</target>
+            </trans-unit>
+            <trans-unit id="104">
+                <source>title.auth.nao.autorizado</source>
+                <target>Você não esta autorizado a acessar "rota".</target>
+            </trans-unit>
+            <trans-unit id="105">
+                <source>title.enviar</source>
+                <target>Enviar</target>
+            </trans-unit>
+            <trans-unit id="106">
+                <source>title.quantidade</source>
+                <target>Quantidade</target>
+            </trans-unit>
+            <trans-unit id="107">
+                <source>title.quantidade.escolha</source>
+                <target>Digite a quantidade</target>
+            </trans-unit>
+            <trans-unit id="108">
+                <source>title.excluir.image.confirmacao</source>
+                <target>Você tem certeza que deseja excluir essa imagem?</target>
+            </trans-unit>
+            <trans-unit id="109">
+                <source>title.editar.excluir</source>
+                <target>Editar ou Excluir</target>
+            </trans-unit>
+            <trans-unit id="110">
+                <source>title.slug.aguarde</source>
+                <target>Verificando se a Url amigável existe</target>
+            </trans-unit>
+            <trans-unit id="111">
+                <source>title.slug.existe</source>
+                <target>Essa Url amigável existe, por favor escolha outro título ou altere diretamente a Url amigável.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

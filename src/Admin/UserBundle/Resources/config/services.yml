@@ -1,0 +1,32 @@
+services:
+  admin_user.service.permissao:
+    class: Admin\UserBundle\Service\PermissaoService
+    arguments:
+      - "@security.authorization_checker"
+      - "@translator.default"
+
+  app.form.registration:
+    class: Admin\UserBundle\Form\RegistrationFormType
+    tags:
+      - { name: form.type, alias: app_user_registration }
+
+  app.form.profile:
+    class: Admin\UserBundle\Form\ProfileFormType
+    tags:
+      - { name: form.type, alias: app_user_profile }
+
+  admin_user.form.handler.registration:
+    class: Admin\UserBundle\Form\Handler\RegistrationFormHandler
+    arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator", "@admin_image.service.image"]
+    scope: request
+    public: false
+
+  admin_user.form.handler.profile:
+    class: Admin\UserBundle\Form\Handler\ProfileFormHandler
+    arguments: ["@form.factory", "@request", "@fos_user.user_manager", "@admin_image.service.image"]
+    scope: request
+    public: false
+
+  admin_user.auth:
+    class: Admin\UserBundle\Service\AutorizacaoService
+    arguments: ["@security.authorization_checker"]

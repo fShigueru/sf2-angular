@@ -1,0 +1,38 @@
+security:
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    firewalls:
+        admin:
+            pattern:    ^/
+            form_login:
+                login_path: /admin/login
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                default_target_path: dashboard
+                always_use_default_target_path: true
+                target_path_parameter: redirect_url
+            logout:
+                path:   /admin/logout
+                target: /admin/
+            anonymous:    true
+
+    access_control:
+        - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/admin/register/confirmed, role: [ROLE_ADMIN,ROLE_USER]}
+        - { path: ^/admin/register/confirm, role: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/admin/register, role: [ROLE_ADMIN]}
+        - { path: ^/admin/resetting, role: ROLE_ADMIN}
+        - { path: ^/admin/menu, role: ROLE_ADMIN}
+        - { path: ^/admin, role: ROLE_USER }
+    #requires_channel: https
+
+    role_hierarchy:
+        ROLE_SIMPLES:     ROLE_SIMPLES
+        ROLE_USER_ADMIN:  ROLE_USER_ADMIN
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN

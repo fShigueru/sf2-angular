@@ -1,0 +1,99 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.vitrine'|transchoice(0,{}, 'messagesVitrineCommonBundle') }} :
+    {{ entity.titulo }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/vitrine/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.vitrine.editar'|transchoice(0,{}, 'messagesVitrineCommonBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-vitrine-new">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{ 'title.vitrine.editar'|transchoice(0,{}, 'messagesVitrineCommonBundle') }} : {{ entity.titulo }}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    {{ include('@AdminCommon/Elements/Vitrine/New/bloco_dados.html.twig') }}
+                    {{ include('@AdminCommon/Elements/Vitrine/New/bloco_data.html.twig') }}
+                    {{ include('@AdminCommon/Elements/Vitrine/New/bloco_image.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ include('@AdminCommon/Elements/Vitrine/Edit/bloco_action.html.twig') }}
+    {{form_end(form) }}
+
+    {% set modalDelete = {
+    'title': 'title.excluir.confirmacao',
+    'modal': 'modal-delete',
+    'iconTitle':'fa-trash',
+    'bundle':'messagesCommonBundle',
+    'formOption':'true',
+    'controller':'NewCtrl'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_p_delete.html.twig', modalDelete) }}
+
+    {% set modalVitrine = {
+    'title': 'title.vitrine.editar',
+    'descricao': 'title.modal.descricao.vitrine.editar',
+    'modal': 'modal-duvida-vitrine-new',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesVitrineCommonBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalVitrine) }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/moment.min2.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker_padrao_pt.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminCommonBundle/Resources/public/js/vitrine/script_image.js'
+    '@AdminCommonBundle/Resources/public/js/style_vitrine_new.js'
+    output='js/cms/vitrine/script_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {#
+    combine=true
+    filter='uglifyjs2'
+    #}
+    <script>
+        initCrop('{{ amazon_s3_base_url ~ '/' ~ amazon_s3_bucket_name ~ '/' ~ entity.image.image  }}',{{ entity.image.proporcoes.0.cropStartLeft }},{{ entity.image.proporcoes.0.cropStartTop }},{{ entity.image.proporcoes.0.scale }});
+    </script>
+{% endblock %}

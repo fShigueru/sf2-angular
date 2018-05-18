@@ -1,0 +1,39 @@
+<div class="image-editor">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12"></div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="s-foto" style="display: none;">
+            {{ form_row(form.image.file, { 'label': false }) }}
+            <div class="button-up" id="uploadTrigger"><p>{{ form.image.file.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}</p></div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="$('{{ fileTrigger }}').trigger('click');">{{ form.image.file.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}</button>
+        <br clear="all" />
+        <div class="form-group">
+            <div class="col-md-7 col-sm-7 col-xs-12" style="padding-left: 0;">
+                <p class="label label-primary" style="font-size: 100%;">{{ 'title.image'|transchoice(0,{}, 'messagesCommonBundle') }}</p>
+            </div>
+        </div>
+        {{ form_row(form.image.proporcoes.0, { 'label': false }) }}
+    </div>
+        <div class="col-md-3 col-sm-3 col-xs-12"></div>
+    </div>
+    <br clear="all" />
+    <div class="cropit-preview"></div>
+    <div class="image-size-label">
+        {{ 'title.imagem.tamanho'|transchoice(0,{}, 'messagesCommonBundle') }}
+    </div>
+    <input type="range" class="cropit-image-zoom-input">
+    <br clear="all" />
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12"></div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <button type="button" class="btn btn-success get-cor">
+                {{ 'title.cortar'|transchoice(0,{}, 'messagesCommonBundle') }}
+            </button>
+            <button type="button" class="btn btn-dark block-crop">
+                {{ 'title.desbloquear'|transchoice(0,{}, 'messagesCommonBundle') }}
+            </button>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-12"></div>
+    </div>
+</div>

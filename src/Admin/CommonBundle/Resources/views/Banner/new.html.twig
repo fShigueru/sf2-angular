@@ -1,0 +1,80 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.cadastrar'|transchoice(0,{}, 'messagesPaginaBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/sass/banner/style_new.scss'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/banner/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body -%}
+
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.cadastrar'|transchoice(0,{}, 'messagesBannerCommonBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-banner-new">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ include('@AdminCommon/Elements/Banner/New/bloco_texto.html.twig') }}
+
+    {{ include('@AdminCommon/Elements/Banner/New/bloco_dados.html.twig') }}
+
+    {{ include('@AdminCommon/Elements/Banner/New/bloco_image.html.twig') }}
+
+    {{ include('@AdminCommon/Elements/Banner/New/bloco_action.html.twig') }}
+
+    {{form_end(form) }}
+
+
+    {% set modalNew = {
+    'title': 'title.modal.title.banner.new',
+    'descricao': 'title.modal.descricao.new',
+    'modal': 'modal-duvida-banner-new',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesBannerCommonBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalNew) }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker_padrao_pt.js'
+    '@AdminCommonBundle/Resources/public/js/banner/script_new.js'
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminCommonBundle/Resources/public/js/banner/script_image.js'
+    output='js/cms/banner/script_new.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        initWithCrop();
+    </script>
+{% endblock %}
+

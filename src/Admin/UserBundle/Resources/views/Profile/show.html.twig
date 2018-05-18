@@ -1,0 +1,12 @@
+{% extends 'AdminCommonBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.sistema.menu.top.right.usuario.ver'|transchoice(0,{}, 'messagesUserBundle') }}
+{% endblock %}
+
+{% block body -%}
+    {% block fos_user_content %}
+        {% include "AdminUserBundle:Profile:show_content.html.twig" %}
+    {% endblock fos_user_content %}
+{% endblock %}

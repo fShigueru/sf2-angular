@@ -1,0 +1,20 @@
+services:
+  admin_endereco.service.estado:
+    class: Admin\EnderecoBundle\Service\EstadoService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+      - "@form.factory"
+      - "@translator.default"
+
+  admin_endereco.service.bairro:
+      class: Admin\EnderecoBundle\Service\BairroService
+      arguments:
+        - "@doctrine.orm.default_entity_manager"
+        - "@form.factory"
+
+  admin_endereco.service.cidade:
+       class: Admin\EnderecoBundle\Service\CidadeService
+       arguments:
+         - "@doctrine.orm.default_entity_manager"
+         - "@form.factory"
+         - "@translator.default"

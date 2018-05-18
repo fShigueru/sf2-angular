@@ -1,0 +1,40 @@
+services:
+  admin_common.service.common:
+    class: Admin\CommonBundle\Service\Common\CommonService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+      - "@translator.default"
+      - "@cocur_slugify"
+      - "@admin_storage.photo_uploader"
+
+  admin_common.service.logger:
+    class: Admin\CommonBundle\Service\Logger\LoggerService
+    arguments:
+      - "@logger"
+    tags:
+      - { name: monolog.logger, channel: persist}
+      - { name: monolog.logger, channel: update}
+      - { name: monolog.logger, channel: delete}
+      - { name: monolog.logger, channel: user}
+
+  admin_common.service.configuracao:
+    class: Admin\CommonBundle\Service\Configuracao\ConfiguracaoService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+
+  admin_common.service.validacao:
+      class: Admin\CommonBundle\Service\Validacao\ValidacaoService
+      arguments:
+        - "@translator.default"
+
+  admin_common.service.vitrine:
+      class: Admin\CommonBundle\Service\Vitrine\VitrineService
+      arguments:
+        - "@doctrine.orm.default_entity_manager"
+
+  admin_common.service.banner:
+      class: Admin\CommonBundle\Service\Banner\BannerService
+      arguments:
+        - "@doctrine.orm.default_entity_manager"
+
+

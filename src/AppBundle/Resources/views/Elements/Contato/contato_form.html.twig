@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" class="ajaxForm" action="{{ path('email_contato') }}" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+            </form>
+        </div>
+    </div>
+</div>

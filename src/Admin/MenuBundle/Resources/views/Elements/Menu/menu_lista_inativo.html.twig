@@ -1,0 +1,26 @@
+<div class="col-md-6 col-sm-6 col-xs-6" ng-controller="MenuListaCtrl">
+    <h2>{{ 'title.menu.inativo'|transchoice(0,{}, 'messagesMenuBundle') }}</h2>
+    <div class='span4'>
+        <ol class='serialization vertical inativo'>
+            {% for menu in entitiesInativo %}
+                {% if menu.entity|get_class == "Pagina" %}
+                    <li data-id='{{ menu.id }}' data-name='{{ menu.entity.paginaTextos.0.titulo }}'>
+                        {{ menu.entity.paginaTextos.0.titulo }}
+                        <a href="{{ path('pagina_show', { 'id': menu.entity.id }) }}" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}">
+                            <i class="fa fa-eye" style="float:right;" data-toggle="tooltip"  data-placement="top" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}"></i>
+                        </a>
+                        <ol></ol>
+                    </li>
+                {% else %}
+                    <li data-id='{{ menu.id }}' data-name='{{ menu.nome|trim }}'>
+                        {{ menu.nome|trim }}
+                        <a ng-click="deleteMenu({{ menu.id }})">
+                            <i class="fa fa-trash-o" style="float:right;" data-toggle="tooltip" data-placement="top" title="{{ 'title.delete'|transchoice(0,{}, 'messagesMenuBundle') }}"></i>
+                        </a>
+                        <ol></ol>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</div>

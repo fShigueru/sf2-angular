@@ -1,0 +1,40 @@
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [AppBundle, AdminEnderecoBundle, AdminCommonBundle, AdminUserBundle, FOSUserBundle, TwigBundle, AdminPaginaBundle,AdminMenuBundle,AdminGaleriaBundle,AdminNoticiaBundle]
+    read_from:      %kernel.root_dir%/Resources/public/images/
+    write_to:       %kernel.root_dir%/../web/static/
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #closure:
+        #    jar: "%kernel.root_dir%/config/java/compiler.jar"
+        #yui_css:
+        #    jar: "%kernel.root_dir%/config/java/yuicompressor-2.4.7.jar"
+        uglifyjs2:
+            bin: /usr/local/bin/uglifyjs
+        uglifycss:
+            bin: /usr/local/bin/uglifycss
+        scssphp:
+            formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+        typescript:
+            bin: /usr/bin/tsc
+            node: /usr/bin/node
+    assets:
+        jquery:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/js/jquery.js'
+        bootstrap:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/js/bootstrap.min.js'
+        angularjs:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/js/angular.min.js'
+        angularInit:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/js/angular/app.js'
+        bootstrap_css:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/css/bootstrap.min.css'
+

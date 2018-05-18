@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.local</source>
+                <target>Local</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.listar</source>
+                <target>Listar locais aonde ficara o Banner no site</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.editar</source>
+                <target>Editar local aonde ficara o Banner no site</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.excluir</source>
+                <target>Excluir local aonde ficara o Banner no site</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.cadastrar</source>
+                <target>Cadastrar local aonde ficara o Banner no site</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.modal.descricao.new</source>
+                <target>Esse módulo é responsavel por cadastrar locais aonde os banner irão ficar no site.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.cadastro.error</source>
+                <target>Erro ao cadastrar um local para o Banner.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.cadastro.sucesso</source>
+                <target>Local para o Banner localBanner cadastrado com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.edit.error</source>
+                <target>Erro ao atualizar localBanner um local para o Banner.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.edit.sucesso</source>
+                <target>Local para o Banner localBanner atualizado com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.delete.error</source>
+                <target>Erro ao excluir localBanner local banner.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.delete.sucesso</source>
+                <target>Local para o Banner localBanner excluido com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.local.menu.cadastrar</source>
+                <target>Cadastrar um local para o banner</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>title.local.menu.list</source>
+                <target>Listar local banner</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>title.message.localbanner.nao.existe</source>
+                <target>Não é possível cadastrar um Banner, os locais disponiveis para o Banner estão sendo usados, ou não existem.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,102 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.cadastrar'|transchoice(0,{}, 'messagesPaginaBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/galeria/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.galeria.new'|transchoice(0,{}, 'messagesGaleriaBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-galeria-new">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ include('@AdminGaleria/Elements/Galeria/New/bloco_um.html.twig') }}
+
+    {{ include('@AdminGaleria/Elements/Galeria/New/bloco_dois.html.twig') }}
+
+    {{ include('@AdminGaleria/Elements/Galeria/New/bloco_cinco.html.twig') }}
+
+    {{ include('@AdminGaleria/Elements/Galeria/New/bloco_tres.html.twig') }}
+
+    {{ include('@AdminGaleria/Elements/Galeria/New/bloco_action.html.twig') }}
+
+    {{form_end(form) }}
+
+    {% set modalGaleriaNew = {
+    'title': 'title.modal.title.galeria.new',
+    'descricao': 'title.modal.descricao.galeria.new',
+    'modal': 'modal-duvida-galeria-new',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesGaleriaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalGaleriaNew) }}
+
+    {% set modalGaleriaDuvidaQuantidade = {
+    'title': 'title.modal.title.galeria.duvida.quantidade',
+    'descricao': 'title.modal.descricao.galeria.duvida.quantidade',
+    'modal': 'modal-duvida-galeria-quantidade',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesGaleriaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalGaleriaDuvidaQuantidade) }}
+
+    {% set modalGaleriaDuvidaVincular = {
+    'title': 'title.modal.title.galeria.duvida.vincular',
+    'descricao': 'title.modal.descricao.galeria.duvida.vincular',
+    'modal': 'modal-duvida-galeria-vincular',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesGaleriaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalGaleriaDuvidaVincular) }}
+
+    {% set modalGaleriaDuvidaImagens = {
+    'title': 'title.modal.title.galeria.duvida.imagens',
+    'descricao': 'title.modal.descricao.galeria.duvida.imagens',
+    'modal': 'modal-duvida-galeria-imagens',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesGaleriaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalGaleriaDuvidaImagens) }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminGaleriaBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker_padrao_pt.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminGaleriaBundle/Resources/public/js/script_cropit.js'
+    '@AdminGaleriaBundle/Resources/public/js/script_new.js'
+    output='js/cms/galeria/script_new.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+    {% for i in 1..qtde %}
+        initCropNew({{ i }},{{ entity.cropSizeW }},{{ entity.cropSizeH }});
+    {% endfor %}
+    </script>
+{% endblock %}

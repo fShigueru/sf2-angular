@@ -1,0 +1,65 @@
+footer{
+  background-color: $azul_padrao;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 2px solid $verde_padrao;
+}
+.footer_logo{}
+.footer_logo img{}
+.social{
+  padding-top: 65px;
+}
+.social h2{
+  text-transform: uppercase;
+  font-size: 16px;
+}
+ul.icon_list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
+}
+ul.icon_list li{
+  display: inline;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+ul.icon_list li a{
+  display: inline-block;
+  color: $azul_padrao;
+  border: 1px solid $azul_padrao;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 28px;
+  transition: all 1s;
+}
+ul.icon_list li a:hover{
+  color: $verde_padrao;
+  border-color:$verde_padrao;
+}
+.copyright_text{
+  padding-top: 80px;
+}
+.copyright_text p{
+  color: $branco;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  letter-spacing: 0px;
+}
+.copyright_text a{
+  color:$verde_padrao;
+  text-transform:uppercase;
+  font-weight:700;
+  text-decoration:none;
+}
+.nav.footer-menu {margin: 0 auto; width: 293px;}
+.nav.footer-menu li{float: left;}
+.nav.footer-menu li a{color: $verde_padrao;}
+.nav.footer-menu li a:hover{color: $azul_padrao;}
+.como-fazemos h3 {color: $branco; margin-top: 70px;}
+.navbar-default .navbar-nav > li > a:active {color: $branco;}

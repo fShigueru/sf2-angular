@@ -1,0 +1,97 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.configuracao'|transchoice(0,{}, 'messagesCommonBundle') }} :
+    {{ entity.valor }}
+{% endblock %}
+{% block body -%}
+{{ form_start(edit_form) }}
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{ 'title.configuracao'|transchoice(0,{}, 'messagesCommonBundle') }} : {{ entity.valor }}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div class="form-horizontal form-label-left">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ edit_form.chave.vars.id }}">{{ edit_form.chave.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ edit_form.chave.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-key form-control-feedback left"></span>
+                                {{ form_row(edit_form.chave, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                        </div>
+                    {% endif %}
+                    <div class="form-group item">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ edit_form.valor.vars.id }}">{{ edit_form.valor.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ edit_form.valor.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <span class="fa fa-cogs form-control-feedback left"></span>
+                            {{ form_row(edit_form.valor, { 'label': false }) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ edit_form.descricao.vars.id }}">{{ edit_form.descricao.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ edit_form.descricao.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <span class="fa fa-align-left form-control-feedback left"></span>
+                            {{ form_row(edit_form.descricao, { 'label': false }) }}
+                        </div>
+                        <br clear="all" />
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <p class="label label-primary">{{ 'title.configuracao.descricao.msg'|trans({}, 'messagesCommonBundle') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('configuracao_new') }}" class="btn btn-success  btn-lg">
+                                {{ 'txt.novo'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                            {% endif %}
+                            <a href="{{ path('configuracao') }}" class="btn btn-warning  btn-lg">
+                                {{ 'title.configuracao.lista'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                            {{ form_widget(edit_form.submit) }}
+                            {{ form_end(edit_form) }}
+                            {#Fim do form#}
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <div style="width: 100px; float: left;">
+                                {{ form(delete_form) }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: imports/framework.yml }
+    - { resource: imports/twig.yml }
+    - { resource: imports/assetic.yml }
+    - { resource: imports/doctrine.yml }
+    - { resource: imports/swiftmailer.yml }
+    - { resource: imports/fos_user.yml }
+    - { resource: imports/vich_uploader.yml }
+    - { resource: imports/knp_gaufrette.yml }
+    - { resource: imports/admin_storage.yml }
+    - { resource: imports/liip_imagine.yml }

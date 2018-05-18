@@ -1,0 +1,8 @@
+services:
+  admin_pagina.service.pagina:
+    class: Admin\PaginaBundle\Service\PaginaService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+      - "@translator.default"
+      - "@cocur_slugify"
+      - "@admin_storage.photo_uploader"

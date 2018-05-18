@@ -1,0 +1,71 @@
+{% extends "AdminCommonBundle::layout_login.html.twig" %}
+
+{% block fos_user_content %}
+
+<div class="">
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <section class="login_content">
+                {% for type, messages in app.session.flashBag.all %}
+                    {% for message in messages %}
+                        <div class="alert alert-warning  alert-dismissible fade in {{ type }}" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            <strong>{{ message|trans({}, 'FOSUserBundle') }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% if error %}
+                    <div class="alert alert-danger alert-dismissible fade in " role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong> {{ error|trans({}, 'FOSUserBundle') }}</strong>
+                    </div>
+                {% endif %}
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <h1>{{ configuracao.valor("titulo.site.resumido") }}</h1>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div>
+                        <input type="text" class="form-control"  id="username" name="_username" value="{{ last_username }}" required="required" placeholder="{{  'security.login.username'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+                    <div>
+                        <input type="password" class="form-control"  id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+                    <input type="hidden" name="_target_path" value="dashboard" />
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="row">
+                                <div class="checkbox">
+                                    <div class="">
+                                        <label>
+                                            <input type="checkbox" class="js-switch" id="remember_me" name="_remember_me" value="on"  checked /> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" id="_submit" class="btn btn-success submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"  />
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="clearfix"></div>
+                    <div class="separator">
+                        <div class="clearfix"></div>
+                        <br />
+                        <div>
+                            <p>© {{ "now"|date("Y") }} {{ configuracao.valor("titulo.site.completo") }}</p>
+                        </div>
+                    </div>
+                </form>
+                <!-- form -->
+            </section>
+            <!-- content -->
+        </div>
+    </div>
+</div>
+
+{% endblock fos_user_content %}

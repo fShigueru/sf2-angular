@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Banner</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ entity.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ entity.url }}</td>
+            </tr>
+            <tr>
+                <th>Dtpublicacao</th>
+                <td>{{ entity.dtPublicacao|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dtexpiracao</th>
+                <td>{{ entity.dtExpiracao|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dtcreated</th>
+                <td>{{ entity.dtCreated|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dtupdate</th>
+                <td>{{ entity.dtUpdate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Target</th>
+                <td>{{ entity.target }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('banner') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('banner_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

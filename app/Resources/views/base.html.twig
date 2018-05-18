@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block metatags %}
+            <meta name="description" content="{{ 'title.tag.home.description'|trans({}, 'messages') }}">
+            <meta name="keywords" content="{{ 'title.tag.home.keywords'|trans({}, 'messages') }}">
+        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets
+            '@bootstrap_css'
+            '@AppBundle/Resources/public/css/geral/animate.css'
+            '@AppBundle/Resources/public/css/geral/preloader.css'
+            '@AppBundle/Resources/public/css/geral/responsive.css'
+            '@AppBundle/Resources/public/css/geral/owl.carousel.css'
+            '@AppBundle/Resources/public/css/geral/owl.theme.default.css'
+            '@AppBundle/Resources/public/css/geral/style.css'
+            combine=true
+            filter='uglifycss'
+            filter='cssrewrite'
+            output='css/app/main.css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            <!-- Google Font -->
+            <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+            <script src="js/lte-ie7.js"></script>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+            '@jquery'
+            '@bootstrap'
+            '@angularjs'
+            '@angularInit'
+            '@AppBundle/Resources/public/js/geral/jquery.nicescroll.js'
+            '@AppBundle/Resources/public/js/geral/lte-ie7.js'
+            '@AppBundle/Resources/public/js/geral/owl.carousel.js'
+            '@AppBundle/Resources/public/js/geral/wow.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.core.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.nonblock.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.buttons.js'
+            '@AppBundle/Resources/public/js/geral/script.js'
+            combine=true
+            filter='uglifyjs2'
+            output='js/app/main.js'
+            %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+        {#
+            combine=true
+            filter='uglifycss'
+            filter='uglifyjs2'
+        #}
+    </body>
+</html>

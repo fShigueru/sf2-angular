@@ -1,0 +1,108 @@
+{% extends 'AdminCommonBundle::layout_list.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.vitrine'|transchoice(0,{}, 'messagesVitrineCommonBundle') }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/css/style_vitrine.css'
+    combine=true
+    filter='uglifycss'
+    filter='cssrewrite'
+    output='css/cms/vitrine/main.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+{% block body -%}
+    <div class="page-title">
+        <div class="title_left">
+            <h3>{{ 'title.vitrine.lista'|transchoice(0,{}, 'messagesVitrineCommonBundle') }} </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                         <a href="{{ path('vitrine_new') }}" class="btn btn-dark">
+                             {{ 'title.vitrine.cadastrar'|transchoice(0,{}, 'messagesVitrineCommonBundle') }}
+                         </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for entity in entities %}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{ entity.titulo }}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="form-horizontal form-label-left">
+                        {% if entity.status == 1 %}
+                            <button type="button" class="btn btn-success btn-xs">
+                                {{'txt.publicado'|transchoice(1,{}, 'messagesCommonBundle') }}
+                            </button>
+                        {% else %}
+                            <button type="button" class="btn btn-danger btn-xs">
+                                {{'txt.rascunho'|transchoice(1,{}, 'messagesCommonBundle') }}
+                            </button>
+                        {% endif %}
+                        <a href="{{ entity.url }}" title="{{ entity.titulo }}">{{ entity.url }}</a>
+                        {% if entity.url %} <a href="{{ entity.url }}" title="{{ entity.titulo }}" target="{{ entity.target }}">{% endif %}
+                                {% if entity.image.image != null %}
+                                    {% for proporcao in entity.image.proporcoes %}
+                                        {% set runtimeConfig = {"relative_resize": {"scale": proporcao.scale},
+                                        "crop": {"start": [proporcao.cropStartLeft,proporcao.cropStartTop], "size": [proporcao.cropSizeW,proporcao.cropSizeH]}
+                                        } %}
+                                        <img src="{{ entity.image.image | imagine_filter('vitrine',runtimeConfig) }}" alt="{{ entity.titulo }}" class="img-responsive vitrine-image-lista {{ entity.status == 1 ? "ativo" : "inativo" }}" />
+                                    {% endfor %}
+                                {% endif %}
+                        {% if entity.url %}</a>{% endif %}
+                    </div>
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            <section>
+                                {% if entity.dtPublicacao %}
+                                    <h4><i class="fa fa-calendar"></i> <b>Publicar em</b> : {{ entity.dtPublicacao|date('d/m/Y H:i:s') }}</h4>
+                                    <h4><i class="fa fa-calendar"></i> <b>Expirar em</b>  : {% if entity.dtExpiracao %}{{ entity.dtExpiracao|date('d/m/Y H:i:s') }}{% endif %}</h4>
+                                {% else %}
+                                    <h4>
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                        {{ 'title.vitrine.nao.data.publicacao'|transchoice(0,{}, 'messagesVitrineCommonBundle') }}
+                                    </h4>
+                                {% endif %}
+                            </section>
+                        </div>
+                        <div class="col-sm-4 invoice-col">
+                            <section>
+                                <h4><i class="fa fa-calendar"></i> <b>Cadastrado em</b> : {% if entity.dtCreated %}{{ entity.dtCreated|date('d/m/Y H:i:s') }}{% endif %}</h4>
+                                <h4><i class="fa fa-calendar"></i> <b>Atualizado em</b> : {% if entity.dtUpdate %}{{ entity.dtUpdate|date('d/m/Y H:i:s') }}{% endif %}</h4>
+                            </section>
+                        </div>
+                        <div class="col-sm-2 invoice-col">
+                        </div>
+                        <div class="col-sm-1 invoice-col">
+                            <section>
+                                <h4>
+                                    <a href="{{ path('vitrine_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-xs" data-placement="top" title="{{ 'title.editar'|transchoice(0,{}, 'messagesCommonBundle') }}">
+                                        <i class="fa fa-pencil"></i>
+                                        {{ 'title.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                    </a>
+                                </h4>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

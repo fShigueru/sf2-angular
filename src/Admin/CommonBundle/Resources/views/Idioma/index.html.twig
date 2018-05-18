@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Idioma list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Sigla</th>
+                <th>Descricao</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('idioma_show', { 'id': entity.sigla }) }}">{{ entity.sigla }}</a></td>
+                <td>{{ entity.descricao }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('idioma_show', { 'id': entity.sigla }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('idioma_edit', { 'id': entity.sigla }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('idioma_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

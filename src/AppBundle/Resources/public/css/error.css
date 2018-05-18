@@ -1,0 +1,6 @@
+body {background: #2a4eac;}
+.error a{text-decoration: none;}
+.error .title{text-align: center; text-transform: uppercase; color: #fff;}
+.error p{color: #fff; text-align: center;}
+.error menu ul li{float: left; list-style: none;}
+.error menu ul li a{padding-right: 10px; color: #fff;}

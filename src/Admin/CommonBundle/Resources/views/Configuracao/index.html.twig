@@ -1,0 +1,82 @@
+{% extends 'AdminCommonBundle::layout_list.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.configuracao'|transchoice(1,{}, 'messagesCommonBundle') }}
+{% endblock %}
+
+{% block body -%}
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>
+                    {{ 'title.configuracao'|transchoice(1,{}, 'messagesCommonBundle') }}
+                </h3>
+            </div>
+
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('configuracao_new') }}" class="btn btn-dark" style="color: #ffffff;" title="{{ 'title.configuracao.nova'|transchoice(0,{}, 'messagesCommonBundle') }}">
+                                {{ 'title.configuracao.nova'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                        {% endif %}
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a href="#"><i class="fa fa-close"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="example" class="table table-striped responsive-utilities jambo_table">
+                            <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" class="tableflat">
+                                </th>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <th>{{ 'title.chave'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                                {% endif %}
+                                <th>{{ 'title.valor'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                                <th>{{ 'txt.descricao'|transchoice(0,{}, 'messagesCommonBundle') }}</th>
+                                <th class="sorting_dis no-link last"><span class="nobr">{{ 'txt.acao'|transchoice(1,{}, 'messagesCommonBundle') }}</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="tableflat">
+                                    </td>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <td>{{ entity.chave }}</td>
+                                    {% endif %}
+                                    <td>{{ entity.valor }}</td>
+                                    <td>{{ entity.descricao }}</td>
+                                    <td>
+                                        <a href="{{ path('configuracao_edit', { 'id': entity.id }) }}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="{{ 'title.configuracao.edit'|transchoice(1,{}, 'messagesCommonBundle') }}"><i class="fa fa-pencil"></i>
+                                            {{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+{% endblock %}

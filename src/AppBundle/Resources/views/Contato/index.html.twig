@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ configuracao.valor("titulo.site.resumido") }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AppBundle/Resources/public/css/contato.css'
+    filter='cssrewrite'
+    output='css/contato/style.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+{#
+combine=true
+filter='uglifycss'
+#}
+{% block body %}
+
+    {{ include('@App/Elements/menu.html.twig') }}
+
+    <div id="contato" class="interna">
+        {# Contato form #}
+        {{ include('@App/Elements/Contato/contato_form.html.twig') }}
+    </div>
+
+    <div id="footer">
+        {# Footer #}
+        {{ include('@App/Elements/footer.html.twig') }}
+    </div> <!--#fifth-->
+
+{% endblock %}

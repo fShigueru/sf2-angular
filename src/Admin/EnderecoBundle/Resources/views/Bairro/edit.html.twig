@@ -1,0 +1,109 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+    {{ 'txt.bairro'|transchoice(0,{}, 'messagesEnderecoBundle') }} : {{ entity.nome }}
+{% endblock %}
+
+{% block body -%}
+
+{{ form_start(edit_form) }}
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }} {{ 'txt.bairro'|transchoice(0,{}, 'messagesEnderecoBundle') }} : {{ entity.nome }}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group item">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ formEstado.estados.vars.id }}"> {{ formEstado.estados.vars.label|transchoice(0,{}, 'messagesEnderecoBundle') }}
+                            {{ formEstado.estados.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <span class="fa fa-flag form-control-feedback left" aria-hidden="true"></span>
+                            {{ form_row(formEstado.estados, { 'label': false }) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <p class="buscando_cidade label label-primary">{{ 'title.bairro.buscando_cidade'|trans({}, 'messagesEnderecoBundle') }}</p>
+                            <p class="selecione_cidade label label-primary">{{ 'title.bairro.selecione_cidade'|trans({}, 'messagesEnderecoBundle') }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ edit_form.cidade.vars.id }}">{{ edit_form.cidade.vars.label|transchoice(0,{}, 'messagesEnderecoBundle') }}
+                            {{ edit_form.cidade.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <span class="fa fa-flag form-control-feedback left" aria-hidden="true"></span>
+                            {{ form_row(edit_form.cidade, { 'label': false }) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                    <div class="form-group item">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ edit_form.nome.vars.id }}">{{ edit_form.nome.vars.label|transchoice(0,{}, 'messagesEnderecoBundle') }}
+                            {{ edit_form.nome.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <span class="fa fa-road form-control-feedback left" aria-hidden="true"></span>
+                            {{ form_row(edit_form.nome, { 'label': false }) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                            <a href="{{ path('bairro_new') }}" class="btn btn-success  btn-lg">
+                                {{ 'txt.novo'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                            <a href="{{ path('bairro') }}" class="btn btn-warning  btn-lg">
+                                {{ 'txt.voltar.lista'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                            {{ form_widget(edit_form.submit) }}
+{{ form_end(edit_form) }}
+                            {#Fim do form#}
+                            <div style="width: 100px; float: left;">
+                                {{ form(delete_form) }}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminEnderecoBundle/Resources/public/js/script.js'
+    combine=true
+    filter='uglifyjs2'
+    output='js/cms/bairro/bairro_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

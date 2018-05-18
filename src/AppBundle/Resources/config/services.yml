@@ -1,0 +1,4 @@
+services:
+  app.service.contato:
+    class: AppBundle\Service\EmailService
+    arguments: ["@mailer", "@templating"]

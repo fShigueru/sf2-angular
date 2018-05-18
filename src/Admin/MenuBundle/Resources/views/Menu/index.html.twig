@@ -1,0 +1,62 @@
+{% extends 'AdminCommonBundle::layout_list.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.menu'|transchoice(0,{}, 'messagesMenuBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/css/select/select2.min.css'
+    '@AdminCommonBundle/Resources/public/js/sortable/css/application.css'
+    '@AdminMenuBundle/Resources/public/scss/style.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/menu/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+
+    {{ include('@AdminMenu/Elements/Menu/bloco_topo.html.twig') }}
+
+    {{ include('@AdminMenu/Elements/Menu/bloco_lista.html.twig') }}
+
+    {{ include('@AdminMenu/Elements/Menu/bloco_action.html.twig') }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminMenuBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/select/select2.full.js'
+    '@AdminCommonBundle/Resources/public/js/sortable/js/jquery-sortable-min.js'
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    output='js/cms/menu/script_lista.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <!-- select2 -->
+    <script>
+        $(document).ready(function () {
+            $(".select2_group").select2({});
+        });
+
+        var group = $("ol.serialization").sortable({
+            group: 'serialization',
+            delay: 500,
+            onDrop: function ($item, container, _super) {
+                var data = group.sortable("serialize").get();
+
+                var jsonString = JSON.stringify(data, null, ' ');
+                jQuery('.btn-atualiza-menu').show();
+                $('.lista-menu').val(jsonString);
+                _super($item, container);
+            }
+        });
+    </script>
+{% endblock %}
+

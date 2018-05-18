@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.menu</source>
+                <target>Gerenciador de Menus do site</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.novo</source>
+                <target>Novo link do menu</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.novo.descricao</source>
+                <target>Você pode cadastrar um link para esse item do menu, apenas tome cuidado com os internos, ele já pode existir.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.cadastrar.item.menu</source>
+                <target>Cadastrar um novo item para o menu.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.cadastrar.item.menu.descricao</source>
+                <target>Essa opção é para você cadastrar um item simples para o menu, que vai conter Título e URL. Se você for cadastrar uma URL interna do site, verifique se ela já não existe.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.update.menu</source>
+                <target>Atualizar lista de menu</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.lista</source>
+                <target>Lista de menus do site</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.menu.ativo</source>
+                <target>Menu Ativo</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.menu.inativo</source>
+                <target>Menu Inativo</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>title.lista.descricao</source>
+                <target>Para ativar ou desativar o menu, clique e arraste na posição desejada, a posição é de cima para baixo, sendo o primeiro de cima o primeiro a ser exibido.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.menu.2</source>
+                <target>Gerenciador de Menus</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.delete</source>
+                <target>Excluir menu</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

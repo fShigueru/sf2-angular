@@ -1,0 +1,99 @@
+<section class="services" id="servicos">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 text-center">
+                <div class="single_service wow fadeInUp" data-wow-delay="1s">
+                    <i class="icon-pencil"></i>
+                    <h2>{{ 'label.servicos.design'|transchoice(0,{}, 'messages') }}</h2>
+                    <p>{{ 'label.servicos.design.descricao'|transchoice(0,{}, 'messages') }}</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="single_service wow fadeInUp" data-wow-delay="2s">
+                    <i class="icon-browser"></i>
+                    <h2>{{ 'label.servicos.site'|transchoice(1,{}, 'messages') }}</h2>
+                    <p>{{ 'label.servicos.site.descricao'|transchoice(0,{}, 'messages') }}</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="single_service wow fadeInUp" data-wow-delay="3s">
+                    <i class="icon-browser"></i>
+                    <h2>{{ 'label.servicos.cms'|transchoice(0,{}, 'messages') }}</h2>
+                    <p>{{ 'label.servicos.cms.descricao'|transchoice(0,{}, 'messages') }}</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="single_service wow fadeInUp" data-wow-delay="4s">
+                    <i class="icon-lightbulb"></i>
+                    <h2>{{ 'label.servicos.branding'|transchoice(0,{}, 'messages') }}</h2>
+                    <p>{{ 'label.servicos.branding.descricao'|transchoice(0,{}, 'messages') }}</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="single_service wow fadeInUp" data-wow-delay="5s">
+                    <i class="icon-magnifying-glass"></i>
+                    <h2>{{ 'label.servicos.seo'|transchoice(0,{}, 'messages') }}</h2>
+                    <p>{{ 'label.servicos.seo.descricao'|transchoice(0,{}, 'messages') }}</p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+<div class="fun_facts">
+    <section class="header parallax home-parallax page" id="fun_facts" style="background-position: 50% -150px;">
+        <div class="section_overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft animated">
+                        <div class="row">
+                            <div class="col-md-10 como-fazemos">
+                                <h3>{{ 'label.como.desenvolvemos'|transchoice(0,{}, 'messages') }}</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="single_count">
+                                    <i class="icon-lightbulb"></i>
+                                    <p>
+                                        {{ 'label.como.desenvolvemos.descricao.um'|transchoice(0,{}, 'messages') }}
+                                        <br />
+                                        {{ 'label.como.desenvolvemos.descricao.um'|transchoice(1,{}, 'messages') }}
+                                        <br />
+                                        {{ 'label.como.desenvolvemos.descricao.um'|transchoice(2,{}, 'messages') }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="single_count">
+                                    <i class="icon-tools-2"></i>
+                                    <p>
+                                        {{ 'label.como.desenvolvemos.descricao.dois'|transchoice(0,{}, 'messages') }}
+                                        <br />
+                                        {{ 'label.como.desenvolvemos.descricao.dois'|transchoice(1,{}, 'messages') }}
+                                        <br />
+                                        {{ 'label.como.desenvolvemos.descricao.dois'|transchoice(2,{}, 'messages') }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="single_count">
+                                    <i class="icon-laptop"></i>
+                                    <p>
+                                        {{ 'label.como.desenvolvemos.descricao.tres'|transchoice(0,{}, 'messages') }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1 wow fadeInRight animated">
+                        <div class="imac">
+                            <img src="{{ asset('imac.png', 'img_home')  | imagine_filter('imac_home') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

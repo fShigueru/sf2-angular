@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.categoria</source>
+                <target>{0} Categoria da notícia | {1} Categoria da notícias </target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.cadastrar</source>
+                <target>Cadastrar uma nova categoria para notícias</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.modal.descricao.noticia.categoria.new</source>
+                <target>As notícias são agrupadas por categorias, para assim ficarem melhor organizadas no site.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

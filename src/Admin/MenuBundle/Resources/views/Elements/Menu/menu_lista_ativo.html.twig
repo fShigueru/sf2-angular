@@ -1,0 +1,48 @@
+<div class="col-md-6 col-sm-6 col-xs-6">
+    <h2>{{ 'title.menu.ativo'|transchoice(0,{}, 'messagesMenuBundle') }}</h2>
+    <ol class='serialization vertical' ng-controller="MenuListaCtrl">
+        {% for menu in entitiesAtivo %}
+            {% set tituloN1 = "" %}
+            {% if menu.entity|get_class == "Pagina" %}
+                {% set tituloN1 = menu.entity.paginaTextos.0.titulo %}
+            {% else %}
+                {% set tituloN1 = menu.nome|trim %}
+            {% endif %}
+
+            <li data-id='{{ menu.id }}' data-name='{{ tituloN1 }}'>
+                {{ tituloN1 }}
+                {% if menu.entity|get_class == "Pagina" %}
+                    <a href="{{ path('pagina_show', { 'id': menu.entity.id }) }}" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}">
+                        <i class="fa fa-eye" style="float:right;" data-toggle="tooltip"  data-placement="top" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}"></i>
+                    </a>
+                {% else %}
+                    <a onclick="getId({{ menu.id }})" data-toggle="modal" data-target=".modal-delete-menu">
+                        <i class="fa fa-trash-o" style="float:right;" data-toggle="tooltip" data-placement="top" title="{{ 'title.delete'|transchoice(0,{}, 'messagesMenuBundle') }}"></i>
+                    </a>
+                {% endif %}
+                <ol>
+                    {% for menuFilho in menu.menuFilho %}
+                        {% set tituloN2 = "" %}
+                        {% if menuFilho.entity|get_class == "Pagina" %}
+                            {% set tituloN2 = menuFilho.entity.paginaTextos.0.titulo %}
+                        {% else %}
+                            {% set tituloN2 = menuFilho.nome|trim %}
+                        {% endif %}
+                        <li data-id='{{ menuFilho.id }}' data-name='{{ tituloN2 }}'>
+                            {% if menuFilho.entity|get_class == "Pagina" %}
+                                <a href="{{ path('pagina_show', { 'id': menuFilho.entity.id }) }}" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}">
+                                    <i class="fa fa-eye" style="float:right;" data-toggle="tooltip"  data-placement="top" title="{{ 'title.pagina.ver.message'|transchoice(0,{}, 'messagesPaginaBundle') }}"></i>
+                                </a>
+                            {% else %}
+                                <a onclick="getId({{ menuFilho.id }})" data-toggle="modal" data-target=".modal-delete-menu">
+                                    <i class="fa fa-trash-o" style="float:right;" data-toggle="tooltip" data-placement="top" title="{{ 'title.delete'|transchoice(0,{}, 'messagesMenuBundle') }}"></i>
+                                </a>
+                            {% endif %}
+                            {{ tituloN2 }}
+                        </li>
+                    {% endfor %}
+                </ol>
+            </li>
+        {% endfor %}
+    </ol>
+</div>

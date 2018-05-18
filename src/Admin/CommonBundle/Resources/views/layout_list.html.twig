@@ -1,0 +1,32 @@
+{% extends 'AdminCommonBundle::layout.html.twig' %}
+{% block stylesheets %}
+   {{ parent() }}
+   {% stylesheets
+   '@AdminCommonBundle/Resources/public/css/datatables/tools/css/dataTables.tableTools.css'
+   combine=true
+   filter='uglifycss'
+   filter='cssrewrite'
+   output='css/cms/main_list.css'
+   %}
+   <link rel="stylesheet" href="{{ asset_url }}" />
+   {% endstylesheets %}
+{% endblock %}
+
+{% block title %}{{ configuracao.valor("titulo.site.resumido") }}{% endblock title %}
+
+{% block body %}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/datatables/js/jquery.dataTables.js'
+    '@AdminCommonBundle/Resources/public/js/datatables/tools/js/dataTables.tableTools.js'
+    '@AdminCommonBundle/Resources/public/js/main_list.js'
+    combine=true
+    filter='uglifyjs2'
+    output='js/cms/main_list.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

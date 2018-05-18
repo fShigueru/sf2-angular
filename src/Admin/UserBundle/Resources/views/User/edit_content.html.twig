@@ -1,0 +1,94 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{ 'txt.sistema.menu.top.right.usuario.editar.dados'|transchoice(0,{}, 'messagesUserBundle') }}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group {{ form.nome.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nome.vars.id }}">{{ form.nome.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ form.nome.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-font form-control-feedback left"></span>
+                            {{ form_row(form.nome, { 'label': false }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group {{ form.sobrenome.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.sobrenome.vars.id }}">{{ form.sobrenome.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ form.sobrenome.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-font form-control-feedback left"></span>
+                            {{ form_row(form.sobrenome, { 'label': false }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group {{ form.username.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.username.vars.id }}">{{ form.username.vars.label|transchoice(0,{}, 'FOSUserBundle') }}
+                            {{ form.username.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-user form-control-feedback left"></span>
+                            {{ form_row(form.username, { 'label': false, 'attr': {'class': 'form-control has-feedback-left'}}) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                </div>
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group {{ form.email.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.email.vars.id }}">Email:
+                            {{ form.email.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-envelope form-control-feedback left"></span>
+                            {{ form_row(form.email, { 'label': false, 'attr': {'class': 'form-control has-feedback-left'}}) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                </div>
+                <div class="form-horizontal form-label-left">
+                    <div class="form-group {{ form.username.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.current_password.vars.id }}">{{ form.current_password.vars.label|transchoice(0,{}, 'FOSUserBundle') }}
+                            {{ form.current_password.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-key form-control-feedback left"></span>
+                            {{ form_row(form.current_password, { 'label': false, 'attr': {'class': 'form-control has-feedback-left' }}) }}
+                        </div>
+                        <br clear="all" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ include('@AdminUser/Elements/Profile/bloco_image.html.twig') }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                        <a href="{{ path('fos_user_change_password') }}" class="btn btn-info  btn-lg">
+                            {{ 'txt.sistema.menu.top.right.usuario.editar.senha'|transchoice(0,{}, 'messagesUserBundle') }}
+                        </a>
+                        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-primary  btn-lg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{form_end(form) }}

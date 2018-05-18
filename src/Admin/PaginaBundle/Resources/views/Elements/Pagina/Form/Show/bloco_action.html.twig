@@ -1,0 +1,32 @@
+<div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                            <a href="{{ path('pagina') }}" class="btn btn-warning  btn-lg">
+                                {{ 'title.pagina.listar'|transchoice(0,{}, 'messagesPaginaBundle') }}
+                            </a>
+                            <div style="width: 100px; float: left;">
+                                <button type="button"  data-toggle="modal" data-target=".modal-delete" class="btn btn-danger  btn-lg">Excluir</button>
+                            </div>
+                            <a href="{{ path('pagina_edit', { 'id': entity.id }) }}" class="btn btn-primary  btn-lg">
+                                {{ 'title.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% set modalDeletePagina = {
+'title': 'title.excluir.confirmacao',
+'modal': 'modal-delete',
+'iconTitle':'fa-trash',
+'bundle':'messagesCommonBundle',
+'formOption':'true',
+'controller':'NewCtrl'} %}
+{{ include('@AdminCommon/Elements/modal/modal_p_delete.html.twig', modalDeletePagina) }}
+<div class="clearfix"></div>

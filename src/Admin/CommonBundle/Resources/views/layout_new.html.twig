@@ -1,0 +1,50 @@
+{% extends 'AdminCommonBundle::layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+   {% stylesheets
+   '@AdminCommonBundle/Resources/public/css/editor/external/google-code-prettify/prettify.css'
+   '@AdminCommonBundle/Resources/public/css/editor/index.css'
+   '@AdminCommonBundle/Resources/public/css/select/select2.min.css'
+   '@AdminCommonBundle/Resources/public/css/switchery/switchery.min.css'
+   '@AdminCommonBundle/Resources/public/sass/style_new.scss'
+   '@AdminCommonBundle/Resources/public/css/main_new.css'
+   combine=true
+   filter="scssphp"
+   filter='cssrewrite'
+   output='css/cms/main_new.css'
+   %}
+   <link rel="stylesheet" href="{{ asset_url }}" />
+   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+   {% endstylesheets %}
+{% endblock %}
+
+{% block title %}{{ configuracao.valor("titulo.site.resumido") }}{% endblock title %}
+
+{% block body -%}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/tags/jquery.tagsinput.min.js'
+    '@AdminCommonBundle/Resources/public/js/switchery/switchery.min.js'
+    '@AdminCommonBundle/Resources/public/js/editor/bootstrap-wysiwyg.js'
+    '@AdminCommonBundle/Resources/public/js/editor/external/jquery.hotkeys.js'
+    '@AdminCommonBundle/Resources/public/js/editor/external/google-code-prettify/prettify.js'
+    '@AdminCommonBundle/Resources/public/js/select/select2.full.js'
+    '@AdminCommonBundle/Resources/public/js/parsley/parsley.min.js'
+    '@AdminCommonBundle/Resources/public/js/textarea/autosize.min.js'
+    '@AdminCommonBundle/Resources/public/js/autocomplete/countries.js'
+    '@AdminCommonBundle/Resources/public/js/autocomplete/jquery.autocomplete.js'
+    '@AdminCommonBundle/Resources/public/js/dropzone/dropzone.js'
+    '@AdminCommonBundle/Resources/public/js/validator/validator.js'
+    '@AdminCommonBundle/Resources/public/js/input_mask/jquery.inputmask.js'
+    '@AdminCommonBundle/Resources/public/js/mask/jquery.maskMoney.min.js'
+    '@AdminCommonBundle/Resources/public/js/common.js'
+    combine=true
+    filter='uglifyjs2'
+    output='js/cms/main_new.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

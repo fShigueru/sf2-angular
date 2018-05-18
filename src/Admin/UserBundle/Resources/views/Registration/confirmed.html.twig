@@ -1,0 +1,23 @@
+{% extends "AdminCommonBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.sistema.menu.top.right.cadastrar.usuario.confirmado'|transchoice(0,{}, 'messagesUserBundle') }}
+{% endblock %}
+{% block body -%}
+    {% block fos_user_content %}
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <h2>{{ 'registration.confirmed'|trans({'%nome%': user.username,'%sobrenome%': user.sobrenome,'%username%': user.username}, 'FOSUserBundle') }}</h2>
+                        {% if app.session is not empty %}
+                            {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+                            {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>{% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock fos_user_content %}
+{% endblock %}

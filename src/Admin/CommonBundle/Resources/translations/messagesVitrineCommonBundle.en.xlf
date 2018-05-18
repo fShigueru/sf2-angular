@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+               <source>title.vitrine</source>
+               <target>{0} Vitrine | {1} Vitrines</target>
+            </trans-unit>
+            <trans-unit id="2">
+               <source>title.vitrine.listar</source>
+               <target>Listar vitrines</target>
+            </trans-unit>
+            <trans-unit id="3">
+               <source>title.vitrine.editar</source>
+               <target>Editar vitrine</target>
+            </trans-unit>
+            <trans-unit id="4">
+               <source>title.vitrine.excluir</source>
+               <target>Excluir vitrine</target>
+            </trans-unit>
+            <trans-unit id="5">
+               <source>title.vitrine.cadastrar</source>
+               <target>Cadastrar vitrine</target>
+            </trans-unit>
+            <trans-unit id="6">
+               <source>title.vitrine.titulo.empty</source>
+               <target>O titulo não pode ser em branco</target>
+            </trans-unit>
+            <trans-unit id="7">
+               <source>title.vitrine.lista</source>
+               <target>Lista de vitrines</target>
+            </trans-unit>
+            <trans-unit id="8">
+               <source>title.vitrine.imagem</source>
+               <target>A imagem da vitrine é obrigatória</target>
+            </trans-unit>
+            <trans-unit id="9">
+               <source>title.vitrine.nao.data.publicacao</source>
+               <target>Não há data de programação para essa vitrine.</target>
+            </trans-unit>
+            <trans-unit id="10">
+               <source>title.vitrine.cadastro.sucesso</source>
+               <target>Vitrine cadastrada com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>title.vitrine.cadastro.error</source>
+                <target>Erro ao cadastrar a vitrine!</target>
+            </trans-unit>
+            <trans-unit id="12">
+               <source>title.vitrine.update.sucesso</source>
+               <target>Vitrine atualizado com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>title.vitrine.update.error</source>
+                <target>Erro ao atualizar a vitrine!</target>
+            </trans-unit>
+            <trans-unit id="14">
+               <source>title.vitrine.excluir.sucesso</source>
+               <target>Vitrine excluida com sucesso!</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>title.vitrine.excluir.error</source>
+                <target>Erro ao excluir a vitrine!</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>title.vitrine.capa</source>
+                <target>Insira uma imagem</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>title.modal.descricao.vitrine.new</source>
+                <target>Esse modulo é responsavel por cadastrar imagens para a vitrine da home.</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>title.modal.descricao.vitrine.editar</source>
+                <target>Esse modulo é responsavel por editar uma vitrine cadastrada.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

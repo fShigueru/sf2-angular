@@ -1,0 +1,54 @@
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title">
+            <img src="{{ asset('logo_165_132_b.png', 'img_commom') | imagine_filter('logo_menu_admin') }}" class="logo open" alt="{{ configuracao.valor("titulo.site.resumido") }}">
+            <img src="{{ asset('logo_01.png', 'img_commom') | imagine_filter('logo_menu_admin') }}" class="logo close" alt="{{ configuracao.valor("titulo.site.resumido") }}">
+            <span>{{ configuracao.valor("titulo.site.resumido") }}</span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="profile">
+            <div class="profile_pic">
+                {% if app.user.image.proporcoes is defined %}
+                    {% for proporcao in app.user.image.proporcoes %}
+                        {% set runtimeConfigThumb = {"relative_resize": {"scale": proporcao.scale},
+                        "crop": {"start": [proporcao.cropStartLeft,proporcao.cropStartTop], "size": [proporcao.cropSizeW,proporcao.cropSizeH]},
+                        "thumbnail": {"size": [proporcao.thumbW,proporcao.thumbH], "mode": "outbound"}
+                        } %}
+                        <img src="{{ app.user.image.image | imagine_filter('user_thumb',runtimeConfigThumb) }}" alt="{{ app.user.username }}" class="img-circle profile_img" />
+                    {% endfor %}
+                {% else %}
+                    <img src="{{ asset('user.png', 'img_commom') }}" alt="{{ app.user.username }}" class="img-circle profile_img">
+                {% endif %}
+            </div>
+            <div class="profile_info">
+                <span>Bem vindo(a),</span>
+                <h2>{{ app.user.nome }}</h2>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section side_left">
+                {{ knp_menu_render('admin_left',{'allow_safe_labels': true} | raw) }}
+            </div>
+        </div>
+        <!-- /sidebar menu -->
+
+        <!-- /menu footer buttons -->
+        <div class="sidebar-footer hidden-small">
+            <a href="{{ url('configuracao') }}" data-toggle="tooltip" data-placement="top" title="{{ 'title.configuracao'|transchoice(0,{}, 'messagesCommonBundle') }}">
+                <span class="fa fa-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" href="/" target="_blank" title="{{ 'title.site.entrar'|transchoice(0,{}, 'sistema') }}" >
+                <span class="fa fa-globe" aria-hidden="true"></span>
+            </a>
+            <a href="{{ path('fos_user_security_logout') }}" data-toggle="tooltip" data-placement="top" title="{{ 'title.sistema.sair'|transchoice(0,{}, 'sistema') }}">
+                <span class="fa fa-power-off" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top">
+                <span class="glyphicon" aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- /menu footer buttons -->
+    </div>
+</div>

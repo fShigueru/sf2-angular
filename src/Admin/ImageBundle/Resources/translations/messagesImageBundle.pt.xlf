@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.image</source>
+                <target>{0} Imagem | {1} Imagens</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.file.empty</source>
+                <target>Imagem é obrigatória.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.upload.mb.max</source>
+                <target>A imagem enviada é muito pesada, por favor, envie uma com menos de 1 mega.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.upload.mimetypes</source>
+                <target>O formato da imagem enviada é inválido, por favor envie um formato válido "jpeg","jpg","gif","png","tiff".</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

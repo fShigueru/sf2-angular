@@ -1,0 +1,50 @@
+
+.single_contact_info{
+  padding-bottom: 21px;
+}
+.single_contact_info h2{
+  text-transform: uppercase;
+  color: $azul_padrao;
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 1px;
+}
+.single_contact_info p{
+  font-size: 15px;
+  color: $azul_padrao;
+}
+
+.contact-form{
+  background-color: #f1f1f1;
+  padding: 30px;
+}
+.contact-form .form-control{
+  height: 43px;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  border: 0px solid $branco;
+}
+.contact-form #message{
+  height: 104px;
+}
+.form_submit{
+  width: 100%;
+  background: $verde_padrao;
+  border-radius: 0px;
+  color: $branco;
+  padding-top: 13px;
+  padding-bottom: 10px;
+  transition: all 1s;
+}
+
+.work-with {
+  padding-bottom: 60px;
+  padding-top: 10px;
+}
+.work-with h3{
+  font-size: 14px;
+  color: $azul_padrao;
+  text-transform: uppercase;
+}
+.contact-form .error {color: $vermelho;}
+.contact-form .info-form {color: $azul_padrao;}

@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ configuracao.valor("titulo.site.resumido") }} - {{ 'title.error.404'|transchoice(0,{}, 'messages_error') }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AppBundle/Resources/public/css/error.css'
+    filter='cssrewrite'
+    output='css/error/style.css'
+    filter='uglifycss'
+    combine=true
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="container error">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <a href="{{ path('homepage') }}">
+                    <img class="img-responsive" src="{{ asset('logo_banners.png', 'img') }}" alt="{{ configuracao.valor("titulo.site.completo") }}">
+                    <div class="title">
+                        <h1>{{ 'title.error.404'|transchoice(0,{}, 'messages_error') }}</h1>
+                    </div>
+                    <p>
+                        {{ 'title.error.404.message'|transchoice(0,{}, 'messages_error') }}
+                    </p>
+                </a>
+                <menu>
+                    <ul>
+                        <li><a href="{{ app.request.get('_locale') == 'pt' ? url('homepage') : url('homepage') }}">Home</a></li>
+                        <li><a href="{{ app.request.get('_locale') == 'pt' ? url('app_sobre') : url('app_about') }}">{{ 'title.sobre'|trans({}, 'messages') }} </a></li>
+                        <li><a href="{{ app.request.get('_locale') == 'pt' ? url('app_contato') : url('app_contact') }}">{{ 'title.contato'|trans({}, 'messages') }}</a></li>
+                        <li><a href="{{ app.request.get('_locale') == 'pt' ? url('app_anunciar') : url('app_advertise') }}">{{ 'title.anunciar.imovel'|transchoice(1,{}, 'messages') }}</a></li>
+                    </ul>
+                </menu>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'AdminCommonBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.sistema.menu.top.right.usuario.editar.dados'|transchoice(0,{}, 'messagesUserBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminUserBundle/Resources/public/sass/style_new.scss'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/user/profile/script_edit.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    {% block fos_user_content %}
+        {% include "AdminUserBundle:Profile:edit_content.html.twig" %}
+    {% endblock fos_user_content %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminUserBundle/Resources/public/js/script_image.js'
+    output='js/cms/user/profile/script_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        initCrop('{{ amazon_s3_base_url ~ '/' ~ amazon_s3_bucket_name ~ '/' ~ entity.image.image  }}',{{ entity.image.proporcoes.0.cropStartLeft }},{{ entity.image.proporcoes.0.cropStartTop }},{{ entity.image.proporcoes.0.scale }});
+    </script>
+{% endblock %}

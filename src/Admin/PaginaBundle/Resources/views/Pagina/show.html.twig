@@ -1,0 +1,43 @@
+{% extends 'AdminCommonBundle::layout_show.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.pagina'|transchoice(0,{}, 'messagesPaginaBundle') }} -
+    {% for paginaTexto in entity.paginaTextos %}
+        {{ paginaTexto.titulo }}
+    {% endfor %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminPaginaBundle/Resources/public/scss/style_show.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/pagina/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/Show/bloco_dados.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/Show/bloco_foto.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/Show/bloco_action.html.twig') }}
+
+    <div class="clearfix"></div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminPaginaBundle/Resources/public/js/angular/controllers.js'
+    output='js/cms/pagina/script_show.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+

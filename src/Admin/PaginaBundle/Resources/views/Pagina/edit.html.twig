@@ -1,0 +1,104 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.editar'|transchoice(0,{}, 'messagesPaginaBundle') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminPaginaBundle/Resources/public/scss/style.scss'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/pagina/style_edit.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.editar'|transchoice(0,{}, 'messagesPaginaBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-pagina-edit">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {#Inicio do form#}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'ng-controller': 'NewCtrl'}}) }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/New/bloco_texto.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/New/bloco_seo.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/New/bloco_pagina.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/New/bloco_image.html.twig') }}
+
+    {{ include('@AdminPagina/Elements/Pagina/Form/Edit/bloco_action.html.twig') }}
+
+    {{ form_end(form) }}
+    {#Fim do form#}
+
+    {% set modalDelete = {
+    'title': 'title.excluir.confirmacao',
+    'modal': 'modal-delete',
+    'iconTitle':'fa-trash',
+    'bundle':'messagesCommonBundle',
+    'formOption':'true',
+    'controller':'NewCtrl'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_p_delete.html.twig', modalDelete) }}
+    <div class="clearfix"></div>
+
+    {% set modalPaginaNew = {
+    'title': 'title.modal.title.pagina.edit',
+    'descricao': 'title.modal.descricao.pagina.edit',
+    'modal': 'modal-duvida-pagina-edit',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesPaginaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalPaginaNew) }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminPaginaBundle/Resources/public/js/angular/value/configValue.js'
+    '@AdminCommonBundle/Resources/public/js/angular/service/postService.js'
+    '@AdminCommonBundle/Resources/public/js/angular/service/getService.js'
+    '@AdminCommonBundle/Resources/public/js/angular/service/slugService.js'
+    '@AdminPaginaBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker.js'
+    '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker_padrao_pt.js'
+    '@AdminCommonBundle/Resources/public/js/exibir_imagem_file.js'
+    '@AdminPaginaBundle/Resources/public/js/script_pagina_new.js'
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminPaginaBundle/Resources/public/js/script_image_pagina.js'
+    output='js/cms/pagina/script_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <!-- input tags -->
+    {{ tinymce_init({
+        theme: {'simple':{'language': 'pt_BR' }},
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        automatic_uploads: true})
+    }}
+    {% if form.image.proporcoes.0 is defined %}
+        <script>
+            initCrop('{{ amazon_s3_base_url ~ '/' ~ amazon_s3_bucket_name ~ '/' ~ entity.image.image  }}',{{ entity.image.proporcoes.0.cropStartLeft }},{{ entity.image.proporcoes.0.cropStartTop }},{{ entity.image.proporcoes.0.scale }});
+        </script>
+    {% endif %}
+{% endblock %}

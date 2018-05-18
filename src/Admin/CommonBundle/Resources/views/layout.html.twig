@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="appAdmin">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}{{ configuracao.valor("titulo.site.resumido") }}{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets
+            '@bootstrap_css'
+            '@AdminCommonBundle/Resources/public/fonts/css/font-awesome.min.css'
+            '@AdminCommonBundle/Resources/public/css/animate.min.css'
+            '@AdminCommonBundle/Resources/public/css/custom.css'
+            '@AdminCommonBundle/Resources/public/css/maps/jquery-jvectormap-2.0.1.css'
+            '@AdminCommonBundle/Resources/public/css/icheck/flat/green.css'
+            '@AdminCommonBundle/Resources/public/css/floatexamples.css'
+            '@AdminCommonBundle/Resources/public/css/style.css'
+            combine=true
+            filter='uglifycss'
+            filter='cssrewrite'
+            output='css/cms/main.css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                {{ include('@AdminCommon/Elements/menu.html.twig') }}
+                {{ include('@AdminCommon/Elements/header.html.twig') }}
+                <div class="right_col" role="main">
+                    <div class="clearfix"></div>
+                    {{ include('@AdminCommon/Elements/alerta/error.html.twig') }}
+                    {{ include('@AdminCommon/Elements/alerta/sucesso.html.twig') }}
+                    {% block body %}{% endblock %}
+                    {{ include('@AdminCommon/Elements/footer.html.twig') }}
+                    {{ include('@AdminCommon/Elements/modal/modal_load.html.twig') }}
+                </div>
+            </div>
+        </div>
+        <div id="custom_notifications" class="custom-notifications dsp_none">
+            <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+            </ul>
+            <div class="clearfix"></div>
+            <div id="notif-group" class="tabbed_notifications"></div>
+        </div>
+        {% block javascripts %}
+            {% javascripts
+            '@jquery'
+            '@bootstrap'
+            '@angularjs'
+            '@AdminCommonBundle/Resources/public/js/angular/app.js'
+            '@AdminCommonBundle/Resources/public/js/nicescroll/jquery.nicescroll.min.js'
+            '@AdminCommonBundle/Resources/public/js/chartjs/chart.min.js'
+            '@AdminCommonBundle/Resources/public/js/progressbar/bootstrap-progressbar.min.js'
+            '@AdminCommonBundle/Resources/public/js/icheck/icheck.min.js'
+            '@AdminCommonBundle/Resources/public/js/moment.min2.js'
+            '@AdminCommonBundle/Resources/public/js/datepicker/daterangepicker.js'
+            '@AdminCommonBundle/Resources/public/js/sparkline/jquery.sparkline.min.js'
+            '@AdminCommonBundle/Resources/public/js/custom.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.pie.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.orderBars.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.time.min.js'
+            '@AdminCommonBundle/Resources/public/js/flot/date.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.spline.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.stack.js'
+            '@AdminCommonBundle/Resources/public/js/flot/curvedLines.js'
+            '@AdminCommonBundle/Resources/public/js/flot/jquery.flot.resize.js'
+            '@AdminCommonBundle/Resources/public/js/angular-slugify.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.core.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.nonblock.js'
+            '@AdminCommonBundle/Resources/public/js/notify/pnotify.buttons.js'
+            '@AdminCommonBundle/Resources/public/js/angular/controllers.js'
+            output='js/cms/main.js'
+            %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            <!--[if lt IE 9]>
+             <!--<script src="../assets/js/ie8-responsive-file-warning.js"></script>-->
+            <![endif]-->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+    </body>
+</html>

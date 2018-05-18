@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <services>
+        <service id="admin_storage.example" class="Admin\StorageBundle\Example">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+    <parameters>
+        <parameter key="admin_storage.amazon_s3.class">AmazonS3</parameter>
+        <parameter key="admin_storage.photo_uploader.class">Admin\StorageBundle\Service\PhotoUploader</parameter>
+    </parameters>
+
+    <services>
+        <service id="admin_storage.amazon_s3" class="%admin_storage.amazon_s3.class%">
+            <argument type="collection">
+                <argument key="key">%admin_storage.amazon_s3.aws_key%</argument>
+                <argument key="secret">%admin_storage.amazon_s3.aws_secret_key%</argument>
+            </argument>
+        </service>
+        <service id="admin_storage.photo_uploader" class="%admin_storage.photo_uploader.class%">
+            <argument type="service" id="photo_storage_filesystem" />
+        </service>
+    </services>
+</container>
+

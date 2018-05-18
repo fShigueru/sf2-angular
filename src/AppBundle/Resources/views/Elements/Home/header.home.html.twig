@@ -1,0 +1,32 @@
+<header id="home" >
+    <section>
+        <div class="section_overlay">
+            {# Menu #}
+            {{ include('@App/Elements/menu.html.twig') }}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="image_logo_bg">
+                            <img src="{{ asset('topo_logo.png', 'img_home') | imagine_filter('imac_home_topo') }}" class="img-responsive" />
+                        </div>
+                        <div class="home_text wow fadeInUp animated">
+                            <h2>{{ 'label.solucoes.web'|transchoice(0,{}, 'messages') }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="scroll_down">
+                            <a href="#servicos"><img src="{{ asset('scroll.png', 'img_home') | imagine_filter('home') }}" alt=""></a>
+                            <h4>Scroll Down</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

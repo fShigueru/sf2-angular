@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>txt.bairro</source>
+                <target>{0} Bairro | {1} Bairros</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>txt.cidade</source>
+                <target>{0} Cidade | {1} Cidades</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>txt.estado</source>
+                <target>{0} Estado | {1} Estados</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>txt.logradouro</source>
+                <target>{0} Logradouro | {1} Logradouros</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.bairro.selecione_estado</source>
+                <target>Selecione um estado para buscar as cidades cadastradas</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.bairro.selecione_cidade</source>
+                <target>Selecione uma cidade</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.bairro.buscando_cidade</source>
+                <target>Buscando cidades ...</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.cidade.selecione_estado</source>
+                <target>Selecione um estado</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>sucesso.cadastro.bairro</source>
+                <target>Bairro cadastrado com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>error.cadastro.bairro</source>
+                <target>Erro ao cadastrar o bairro!.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>sucesso.update.bairro</source>
+                <target>Bairro atualizado com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>error.update.bairro</source>
+                <target>Erro ao atualizar o bairro!.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>error.delete.bairro</source>
+                <target>Erro ao excluir o bairro!.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>sucesso.delete.bairro</source>
+                <target>Bairro excluido com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>sucesso.cadastro.cidade</source>
+                <target>Cidade cadastrada com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>error.cadastro.cidade</source>
+                <target>Erro ao cadastrar a cidade!.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>sucesso.update.cidade</source>
+                <target>Cidade atualizada com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>error.update.cidade</source>
+                <target>Erro ao atualizar a cidade!.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>sucesso.delete.cidade</source>
+                <target>Cidade excluida com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>error.delete.cidade</source>
+                <target>Erro ao excluir a cidade!.</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>sucesso.cadastro.estado</source>
+                <target>Estado cadastrado com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>error.cadastro.estado</source>
+                <target>Erro ao cadastrar o Estado!.</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>sucesso.update.estado</source>
+                <target>Estado atualizado com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>error.update.estado</source>
+                <target>Erro ao atualizar o Estado!.</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>sucesso.delete.estado</source>
+                <target>Estado excluido com sucesso!.</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>error.delete.estado</source>
+                <target>Erro ao excluir o Estado!.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>txt.endereco</source>
+                <target>{0} Endereço | {1} Endereços</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>txt.mensagem.novo.bairro</source>
+                <target>Se não encontrar o bairro, cadastre um para esse endereço.</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>title.bairro.selecione_bairro</source>
+                <target>Selecione um bairro</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>title.bairro.buscando_bairro</source>
+                <target>Buscando bairros ...</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro</source>
+                <target>Estado/Cidade/Bairro</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.estado.cadastrar</source>
+                <target>Cadastrar Estado</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.estado.listar</source>
+                <target>Listar Estados</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.cidade.cadastrar</source>
+                <target>Cadastrar Cidade</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.cidade.listar</source>
+                <target>Listar Cidades</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.bairro.cadastrar</source>
+                <target>Cadastrar Bairro</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>txt.sistema.menu.left.EstadoCidadeBairro.bairro.listar</source>
+                <target>Listar Bairros</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>title.bairro.selecione</source>
+                <target>Selecione um bairro</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

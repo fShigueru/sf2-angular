@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>error.empty.input.logradouro</source>
+                <target>Por favor entre com um logradouro/endereço.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>error.empty.select.bairro</source>
+                <target>Por favor selecione um bairro.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>error.empty.input.bairro</source>
+                <target>Por favor entre com um bairro.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>error.empty.select.cidade</source>
+                <target>Por favor selecione uma cidade.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>error.empty.input.cidade</source>
+                <target>Por favor entre com uma cidade.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>error.empty.select.estado</source>
+                <target>Por favor selecione um estado.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>error.empty.input.estado</source>
+                <target>Por favor entre com a sigla de um estado.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>error.empty.input.cep</source>
+                <target>Por favor entre com um CEP.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>error.nao.existe.bairro</source>
+                <target>Erro ao buscar o Bairro, por favor verifique se ele existe!.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>error.nao.existe.cidade</source>
+                <target>Erro ao excluir a Cidade, por favor verifique se ela existe!.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>error.nao.existe.estado</source>
+                <target>Erro ao excluir o Estado, por favor verifique se ele existe!.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

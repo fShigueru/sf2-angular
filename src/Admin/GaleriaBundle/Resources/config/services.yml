@@ -1,0 +1,6 @@
+services:
+  admin_galeria.service.galeria:
+    class: Admin\GaleriaBundle\Service\GaleriaService
+    arguments:
+      - "@doctrine.orm.default_entity_manager"
+      - "@admin_storage.photo_uploader"

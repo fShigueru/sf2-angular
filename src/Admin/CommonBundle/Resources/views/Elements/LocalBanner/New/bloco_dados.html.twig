@@ -1,0 +1,29 @@
+<div class="form-horizontal form-label-left">
+    <div class="form-group item">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> {{ form.local.vars.label|transchoice(0,{}, 'messagesLocalBannerCommonBundle') }}
+            {{ form.local.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <span class="fa fa-flag form-control-feedback left" aria-hidden="true"></span>
+            {{ form_row(form.local, { 'label': false }) }}
+        </div>
+    </div>
+    <div class="form-group item">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> {{ form.width.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+            {{ form.width.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <span class="fa fa-arrows-h form-control-feedback left" aria-hidden="true"></span>
+            {{ form_row(form.width, { 'label': false }) }}
+        </div>
+    </div>
+    <div class="form-group item">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> {{ form.height.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+            {{ form.height.vars.required ? '<span class="required">*</span>' : '' }}
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <span class="fa fa-arrows-v form-control-feedback left" aria-hidden="true"></span>
+            {{ form_row(form.height, { 'label': false }) }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+{% if qtde > 0 %}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>{{ 'title.image'|transchoice(0,{}, 'messagesCommonBundle') }}</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            <li class="dropdown"></li>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        {% for image in form.image %}
+            {% if loop.index > qtdeCadastrada and  loop.index <= qtdeTotal %}
+                <div class="row">
+                    <div class="form-horizontal form-label-left">
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    {{ include('@AdminGaleria/Elements/image_crop.html.twig') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for texto in image.textos %}
+                        <div class="form-horizontal form-label-left">
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                <div class="form-group {{ texto.titulo.vars.required ? 'item' : '' }}">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ texto.titulo.vars.id }}">
+                                        {{ texto.titulo.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                        {{ texto.titulo.vars.required ? '<span class="required">*</span>' : '' }}
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <span class="fa fa-align-left form-control-feedback left" aria-hidden="true"></span>
+                                        {{ form_row(texto.titulo, { 'label': false }) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                <div class="form-group {{ texto.subtitulo.vars.required ? 'item' : '' }}">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ texto.subtitulo.vars.id }}">
+                                        {{ texto.subtitulo.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                        {{ texto.subtitulo.vars.required ? '<span class="required">*</span>' : '' }}
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <span class="fa fa-align-left form-control-feedback left" aria-hidden="true"></span>
+                                        {{ form_row(texto.subtitulo, { 'label': false }) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                <div class="form-group {{ texto.descricao.vars.required ? 'item' : '' }}">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ texto.descricao.vars.id }}">
+                                        {{ texto.descricao.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                        {{ texto.descricao.vars.required ? '<span class="required">*</span>' : '' }}
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        {{ form_row(texto.descricao, { 'label': false }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <hr />
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

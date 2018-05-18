@@ -1,0 +1,85 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.configuracao.nova'|transchoice(0,{}, 'messagesCommonBundle') }}
+{% endblock %}
+
+{% block body -%}
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{ 'title.configuracao'|transchoice(0,{}, 'messagesCommonBundle') }}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.chave.vars.id }}">{{ form.chave.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.chave.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-key form-control-feedback left"></span>
+                                {{ form_row(form.chave, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                        </div>
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.valor.vars.id }}">{{ form.valor.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.valor.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-cogs form-control-feedback left"></span>
+                                {{ form_row(form.valor, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                        </div>
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.descricao.vars.id }}">{{ form.descricao.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.descricao.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-align-left form-control-feedback left"></span>
+                                {{ form_row(form.descricao, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                    <p class="label label-primary">{{ 'title.configuracao.descricao.msg'|trans({}, 'messagesCommonBundle') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                                <a href="{{ path('configuracao') }}" class="btn btn-warning  btn-lg">
+                                    {{ 'title.configuracao.lista'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                </a>
+                                {{ form_widget(form.submit) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ form_end(form) }}
+{#Fim do form#}
+{% endblock %}

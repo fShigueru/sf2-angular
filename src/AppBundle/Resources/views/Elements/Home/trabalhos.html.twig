@@ -1,0 +1,66 @@
+<section class="work_area" id="trabalhos">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="work_title  wow fadeInUp animated">
+                    <h1>{{ 'label.ultimos.trabalhos'|transchoice(0,{}, 'messages') }}</h1>
+                    <img src="{{ asset('shape.png', 'img_home')  | imagine_filter('home') }}" alt="">
+                    <p>
+                        {{ 'label.ultimos.trabalhos.descricao'|transchoice(0,{}, 'messages') }}
+                        <br />
+                        {{ 'label.ultimos.trabalhos.descricao'|transchoice(1,{}, 'messages') }} <a href="#contato">{{ 'label.ultimos.trabalhos.descricao'|transchoice(2,{}, 'messages') }}</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 no_padding">
+            </div>
+            <div class="col-md-4 no_padding">
+                <div class="single_image">
+                    <img src="{{ asset('port_01.jpg', 'img_home')  | imagine_filter('port') }}" alt="">
+                    <div class="image_overlay">
+                        <a href="http://www.vidalesapartmentsrio.com" target="_blank">
+                            {{ 'label.visitar.site'|transchoice(0,{}, 'messages') }}
+                        </a>
+                        <h2>{{ 'label.port.vidales'|transchoice(0,{}, 'messages') }}</h2>
+                        <h4>{{ 'label.port.vidales.descricao'|transchoice(0,{}, 'messages') }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 no_padding">
+                <div class="single_image">
+                    <p>O seu site aqui!</p>
+                    <img src="{{ asset('port_seu.jpg', 'img_home')  | imagine_filter('port_site_aqui') }}" alt="">
+                    <div class="image_overlay">
+                        <h2>{{ 'label.port.default'|transchoice(0,{}, 'messages') }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 no_padding">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="call_to_action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 wow fadeInLeft animated">
+                <div class="left">
+                    <h2>{{ 'label.quer.saber.mais'|transchoice(0,{}, 'messages') }}</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1 wow fadeInRight animated">
+                <div class="baton">
+                    <a href="#contato">
+                        <button type="button" class="btn btn-primary cs-btn">{{ 'label.fale.conosco'|transchoice(0,{}, 'messages') }}</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

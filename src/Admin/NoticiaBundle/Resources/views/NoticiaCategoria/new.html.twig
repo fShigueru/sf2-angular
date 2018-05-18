@@ -1,0 +1,63 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.cadastrar'|transchoice(0,{}, 'messagesNoticiaCategoriaBundle') }}
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                {{ 'title.cadastrar'|transchoice(0,{}, 'messagesNoticiaCategoriaBundle') }}
+            </h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+                <span class="label label-danger label-info-admin cursor-pointer" data-toggle="modal" data-target=".modal-duvida-noticia-categoria-new">
+                    {{ 'title.modulo.oque.faz'|transchoice(0,{}, 'messagesCommonBundle') }}
+                    <i class="fa fa-question padding-left-7 padding-right-7"> </i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'ng-controller': 'NewCtrl'}}) }}
+
+    {{ include('@AdminNoticia/Elements/NoticiaCategoria/New/bloco_texto.html.twig') }}
+
+    {{ include('@AdminNoticia/Elements/NoticiaCategoria/New/bloco_action.html.twig') }}
+
+    {{form_end(form) }}
+
+    {#Fim do form#}
+
+    {% set modalNew = {
+    'title': 'title.cadastrar',
+    'descricao': 'title.modal.descricao.noticia.categoria.new',
+    'modal': 'modal-duvida-noticia-categoria-new',
+    'iconTitle':'fa-info-circle',
+    'bundle':'messagesNoticiaCategoriaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalNew) }}
+
+    {% set modalDuvidaSlug = {'title': 'title.modal.title.duvida.slug',
+    'descricao': 'title.modal.descricao.duvida.slug',
+    'modal': 'modal-duvida-slug',
+    'iconTitle':'fa-question',
+    'bundle':'messagesPaginaBundle'} %}
+    {{ include('@AdminCommon/Elements/modal/modal_g.html.twig', modalDuvidaSlug) }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminNoticiaBundle/Resources/public/js/angular/value/configValue.js'
+    '@AdminCommonBundle/Resources/public/js/angular/service/postService.js'
+    '@AdminCommonBundle/Resources/public/js/angular/service/slugService.js'
+    '@AdminNoticiaBundle/Resources/public/js/angular/controllers.js'
+    output='js/cms/noticia_categoria/script_new.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

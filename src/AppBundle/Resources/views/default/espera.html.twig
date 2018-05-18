@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ configuracao.valor("titulo.site.completo") }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    filter='cssrewrite'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div id="home">
+        <div id="slideshow">
+            <div class="container">
+
+                <h1>Test resized with <code>test_small_thumb</code></h1>
+                {# NOTE THAT FOR THE MOMENT THE THUMBNAIL IS COMMENTED #}
+                <img src="{{ image | imagine_filter('test_small_thumb') }}" alt="" />
+
+                <h1>Test resized with <code>test_medium_thumb</code></h1>
+                {# NOTE THAT FOR THE MOMENT THE THUMBNAIL IS COMMENTED #}
+                {#{% set runtimeConfig = {"thumbnail": {"size": [50, 50] }, "mode": "outbound"} %}#}
+                {% set runtimeConfig = {"relative_resize": {"scale": scale},
+                                        "crop": {"start": crop.start, "size": crop.size },
+                                        "thumbnail": {"size": crop.size, "mode": "outbound" }
+
+                } %}
+
+                {# {"thumbnail": {"size": thumb, "mode": "outbound"}, #}
+                <img src="{{ image | imagine_filter('test_medium_thumb',runtimeConfig) }}" alt="" />
+
+                <h1>crop</h1>
+                <img src="{{ image | imagine_filter('crop_medium_thumb') }}" alt="" />
+
+                <h1>Original Image</h1>
+                <img src="{{ image }}" alt="" />
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

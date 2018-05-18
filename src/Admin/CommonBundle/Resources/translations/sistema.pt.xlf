@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.site.entrar</source>
+                <target>Ir para o site</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.sistema.sair</source>
+                <target>Sair do sistema</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.sistema.configuracao</source>
+                <target>Configurações</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.sistema.menu.left.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.sistema.versao</source>
+                <target>Versão</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+
+

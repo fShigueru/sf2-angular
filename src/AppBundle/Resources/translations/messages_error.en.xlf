@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.error.404</source>
+                <target>Page not found</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.error.404.message</source>
+                <target>It´s looking like you may have taken a wrong turn. Don`t worry...it happens to the best of us. Here´s a little map that might help you get back on track</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.error.500</source>
+                <target>Internal System Error</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.error.500.message</source>
+                <target>Internal System Error, wait and try to access this page later.We solve this problem as quickly as possible. Sorry for any inconvenience caused.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

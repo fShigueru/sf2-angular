@@ -1,0 +1,20 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-9">
+                        <div ng-controller="MenuListaCtrl">
+                            {#<pre id='serialize_output2'></pre>#}
+                            <input type="hidden" ng-model="listaMenu" class="lista-menu" />
+                            <button ng-click="saveMenuLista()" class="btn btn-success btn-lg btn-atualiza-menu">
+                                {{ 'title.update.menu'|transchoice(0,{}, 'messagesMenuBundle') }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

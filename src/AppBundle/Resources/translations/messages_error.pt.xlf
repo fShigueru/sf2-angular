@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="pt" target-language="pt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>title.error.404</source>
+                <target>Página não encontrada</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>title.error.404.message</source>
+                <target>IT'S parecendo que você pode ter tomado um rumo errado. Não se preocupe ... isso acontece com o melhor de nós. Aqui está um pequeno mapa que pode ajudá-lo a voltar à pista</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>title.error.500</source>
+                <target>Erro interno</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>title.error.500.message</source>
+                <target>Erro interno do sistema, aguarde ou tente acessar essa página mais tarde. Resolveremos esse problema o mais rápido possivel. Desculpe por qualquer inconveniente causado.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>title.email.valido</source>
+                <target>Entre com um email válido.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>title.nome.empty</source>
+                <target>O campo nome não pode ser enviado em branco.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>title.tel.empty</source>
+                <target>O campo Telefone/Celular não pode ser enviado em branco.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.form.contato.info</source>
+                <target>Por favor, preencha todos os campos, para que possamos entrar em contato com você.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>label.contato.error</source>
+                <target>Ops, algum problema ocorreu na hora de enviar o e-mail, por favor tente mais uma vez.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

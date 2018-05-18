@@ -1,0 +1,22 @@
+knp_gaufrette:
+    adapters:
+        photo_storage:
+            amazon_s3:
+                amazon_s3_id: admin_storage.amazon_s3
+                bucket_name: %amazon_s3_bucket_name%
+                create: true
+                options:
+                    create: true
+        photo:
+            local:
+                directory:  %kernel.root_dir%/../web/media/local
+                create:     true
+
+    filesystems:
+        photo_storage:
+             adapter: photo_storage
+             alias: photo_storage_filesystem
+        photo:
+             adapter: photo
+             alias: photo_filesystem
+    stream_wrapper: ~

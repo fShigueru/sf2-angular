@@ -1,0 +1,91 @@
+ <div class="x_panel">
+    <div class="x_title">
+        <h2>
+            {{ 'title.pagina'|transchoice(0,{}, 'messagesPaginaBundle') }} -
+            {% for paginaTexto in entity.paginaTextos %}
+                <a href="/pagina/{{ paginaTexto.slug }}" title="{{ 'title.link'|transchoice(0,{}, 'messagesCommonBundle') }}">
+                    {{ app.request.server.get('HTTP_HOST') ~ '/pagina/' ~ paginaTexto.slug }}
+                </a>
+            {% endfor %}
+        </h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{ 'title.help'|transchoice(0,{}, 'messagesCommonBundle') }}</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-close"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <section class="content invoice">
+            <!-- info row -->
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-sm-7">
+                    <h1>
+                        {% for paginaTexto in entity.paginaTextos %}
+                            <i class="fa fa-globe"></i> {{ paginaTexto.titulo }}.
+                        {% endfor %}
+                    </h1>
+                    <!-- blockquote -->
+                    {% for paginaTexto in entity.paginaTextos %}
+                        <blockquote class="message">
+                            {{ paginaTexto.subTitulo }}
+                        </blockquote>
+
+                        <blockquote {{ loop.index % 2 == 0 ? 'class="blockquote-reverse"' }}>
+                            {{ paginaTexto.descricao | raw }}
+                            <footer>
+                                {{ paginaTexto.idioma.descricao }}
+                            </footer>
+                        </blockquote>
+                    {% endfor %}
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4 col-lg-4 col-sm-5">
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="x_title">
+                                <h2>{{ 'title.info.pagina'|transchoice(0,{}, 'messagesPaginaBundle') }}</h2>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            {% if entity.status == 1 %}
+                                <h3 class="green"><i class="fa fa-check"></i> {{'txt.publicado'|transchoice(1,{}, 'messagesCommonBundle') }}</h3>
+                            {% else %}
+                                <h3 class="red"><i class="fa fa-eye-slash"></i>{{'txt.rascunho'|transchoice(1,{}, 'messagesCommonBundle') }}</h3>
+                            {% endif %}
+
+                            <ul class="list-unstyled project_files">
+                                <li><i class="fa fa-calendar"></i> {{ 'title.data.criado'|transchoice(0,{}, 'messagesCommonBundle') }}: {{ entity.created|date('d/m/Y H:i:s') }}
+                                </li>
+                                <li><i class="fa fa-calendar"></i> {{ 'title.data.publicacao'|transchoice(0,{}, 'messagesCommonBundle') }}:  {{ entity.dtPublicacao|date('d/m/Y H:i:s') }}
+                                </li>
+                            </ul>
+
+                            <br />
+                            <div class="x_title">
+                                <h2>{{ 'title.seo'|transchoice(0,{}, 'messagesPaginaBundle') }}</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            {% for paginaSeo in entity.paginaSeo %}
+                                <div class="project_detail">
+                                    <p class="title">Description</p>
+                                    <p>{{ paginaSeo.descricao }}</p>
+                                    <p class="title">Key Word</p>
+                                    <p>{{ paginaSeo.keyWord }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

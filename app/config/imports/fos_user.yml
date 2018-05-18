@@ -1,0 +1,17 @@
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Admin\UserBundle\Entity\User
+    profile:
+        form:
+            type: app_user_profile
+            handler: admin_user.form.handler.profile
+    registration:
+        confirmation:
+            enabled: true
+            from_email:
+                address: filipe.shigueru@gmail.com
+                sender_name: Fshigueru Admin
+        form:
+            type: app_user_registration
+            handler: admin_user.form.handler.registration

@@ -1,0 +1,23 @@
+{% extends 'AdminCommonBundle::layout_list.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'title.lista'|transchoice(0,{}, 'messagesGaleriaBundle') }}
+{% endblock %}
+
+{% block body -%}
+
+    {{ include('@AdminGaleria/Elements/Galeria/List/bloco_lista.html.twig') }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminPaginaBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/script.open.modal.js'
+    output='js/cms/pagina/script_lista.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+

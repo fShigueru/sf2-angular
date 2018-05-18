@@ -1,0 +1,55 @@
+<div>
+    <div class="x_panel">
+        <div class="x_title">
+            <h2></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <li class="dropdown"></li>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="row">
+                <div class="form-horizontal form-label-left">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div class="form-group {{ form.titulo.vars.required ? 'item' : '' }}">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{  form.titulo.vars.id }}">
+                                {{ form.titulo.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.titulo.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="fa fa-align-left form-control-feedback left" aria-hidden="true"></span>
+                                {{ form_row(form.titulo, { 'label': false }) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div class="form-group {{ form.url.vars.required ? 'item' : '' }}">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.url.vars.id }}">
+                                {{ form.url.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.url.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="fa fa-align-left form-control-feedback left" aria-hidden="true"></span>
+                                {{ form_row(form.url, { 'label': false }) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <div class="form-group {{ form.target.vars.required ? 'item' : '' }}">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.target.vars.id }}">
+                                {{ form.target.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                                {{ form.target.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                {{ form_row(form.target, { 'label': false }) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

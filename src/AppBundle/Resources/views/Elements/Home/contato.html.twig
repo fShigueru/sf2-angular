@@ -1,0 +1,64 @@
+<section class="contact" id="contato">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="contact_title  wow fadeInUp animated">
+                    <h1>Contato</h1>
+                    <img src="{{ asset('shape.png', 'img_home') | imagine_filter('home') }}" alt="">
+                    <p>Ficou interessado? quer saber mais? Entre em contato.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3  wow fadeInLeft animated">
+                <div class="single_contact_info">
+                    <h2>Celular</h2>
+                    <p>(11)98669 6849</p>
+                </div>
+                <div class="single_contact_info">
+                    <h2>E-mail</h2>
+                    <p>filipe.shigueru@yahoo.com.br</p>
+                </div>
+                <div class="single_contact_info">
+                    <h2>Contato</h2>
+                    <p>Filipe Shigueru</p>
+                </div>
+            </div>
+            <div class="col-md-9 wow fadeInRight animated" ng-controller="HomeCtrl">
+                <form class="contact-form" name="myFormContato" action="#">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form_row(form.nome, { 'label': false }) }}
+                            <p ng-show="myFormContato['appbundle_contatotype[nome]'].$error.required && !myFormContato['appbundle_contatotype[nome]'].$pristine" class="error">
+                                {{ 'title.nome.empty'|transchoice(0,{}, 'messages_error') }}
+                            </p>
+                            {{ form_row(form.email, { 'label': false }) }}
+                            <p ng-show="myFormContato['appbundle_contatotype[email]'].$invalid && !myFormContato['appbundle_contatotype[email]'].$pristine" class="error">
+                                {{ 'title.email.valido'|transchoice(0,{}, 'messages_error') }}
+                            </p>
+                            {{ form_row(form.telefone, { 'label': false }) }}
+                            <p ng-show="myFormContato['appbundle_contatotype[telefone]'].$error.required && !myFormContato['appbundle_contatotype[telefone]'].$pristine" class="error">
+                                {{ 'title.tel.empty'|transchoice(0,{}, 'messages_error') }}
+                            </p>
+                            <p class="info-form">{{ 'title.form.contato.info'|transchoice(0,{}, 'messages_error') }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(form.mensagem, { 'label': false }) }}
+                            {{ form_widget(form.enviar) }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="work-with  wow fadeInUp animated">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

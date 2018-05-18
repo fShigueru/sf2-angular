@@ -1,0 +1,91 @@
+{% extends 'AdminCommonBundle::layout_new.html.twig' %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }}
+    {{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }} : {{ entity.nome }}
+{% endblock %}
+
+{% block body -%}
+
+    {{ form_start(edit_form) }}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{ 'txt.editar'|transchoice(0,{}, 'messagesCommonBundle') }} {{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }} : {{ entity.nome }}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ edit_form.estado.vars.label|transchoice(0,{}, 'messagesEnderecoBundle') }}
+                                {{ edit_form.estado.vars.required ? '<span class="required">*</span>' : '' }}
+                            </label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-flag form-control-feedback left" aria-hidden="true"></span>
+                                {{ form_row(edit_form.estado, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                        </div>
+                        <div class="form-group item">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">{{ 'txt.cidade'|transchoice(0,{}, 'messagesEnderecoBundle') }}  <span class="required">*</span></label>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <span class="fa fa-road form-control-feedback left" aria-hidden="true"></span>
+                                {{ form_row(edit_form.nome, { 'label': false }) }}
+                            </div>
+                            <br clear="all" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-6">
+                                <a href="{{ path('cidade_new') }}" class="btn btn-success  btn-lg">
+                                    {{ 'txt.nova'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                </a>
+                                <a href="{{ path('cidade') }}" class="btn btn-warning  btn-lg">
+                                    {{ 'txt.voltar.lista'|transchoice(0,{}, 'messagesCommonBundle') }}
+                                </a>
+                                {{ form_widget(edit_form.submit) }}
+                                {{ form_end(edit_form) }}
+                                {#Fim do form#}
+                                <div style="width: 100px; float: left;">
+                                    {{ form(delete_form) }}
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminEnderecoBundle/Resources/public/js/script.js'
+    combine=true
+    filter='uglifyjs2'
+    output='js/cms/cidade/cidade_edit.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+

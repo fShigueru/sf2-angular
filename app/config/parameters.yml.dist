@@ -1,0 +1,29 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+    mailer_encryption: ~
+    mailer_port: ~
+    mailer_auth_mode:  login
+    # A secret key that's used to generate certain security-related tokens
+    secret:                 ThisTokenIsNotSoSecretChangeIt
+    amazon_aws_key: AKIAIBKYOWHUQ5JE22XQ
+    amazon_aws_secret_key: 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
+    amazon_s3_base_url: 'https://s3-sa-east-1.amazonaws.com'
+    amazon_s3_region: 'sa-east-1'
+    amazon_s3_version: '1.0.0'
+    amazon_s3_bucket_name:  base-aws
+    email_image_url:        /bundles/app/images/
+    email: 'filipe.shigueru@yahoo.com.br'

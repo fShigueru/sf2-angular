@@ -1,0 +1,36 @@
+{% extends "AdminCommonBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ configuracao.valor("titulo.site.resumido") }} -
+    {{ 'txt.sistema.menu.top.right.cadastrar.usuario'|transchoice(0,{}, 'messagesUserBundle') }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminUserBundle/Resources/public/sass/style_new.scss'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/scss/cropit-master.scss'
+    filter="scssphp"
+    filter='cssrewrite'
+    output='css/cms/user/registration/style_new.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+    {% block fos_user_content %}
+        {% include "AdminUserBundle:Registration:register_content.html.twig" %}
+    {% endblock fos_user_content %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AdminCommonBundle/Resources/public/js/cropit-master/dist/jquery.cropit.js'
+    '@AdminUserBundle/Resources/public/js/script_image.js'
+    output='js/cms/user/registration/script_new.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

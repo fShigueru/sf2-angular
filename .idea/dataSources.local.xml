@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - site_base@localhost [2]" uuid="a53748a6-3d7c-4168-802d-b7173158439d">
+      <user-name>root</user-name>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>localhost</proxy-host>
+        <proxy-port>2222</proxy-port>
+        <secret-storage>master_key</secret-storage>
+        <user>vagrant</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
+    <data-source name="MySQL - vidalesdb@vidalesdb.cfhfimymyvmv.sa-east-1.rds.amazonaws.com" uuid="2655dee4-ca54-411b-babc-e9b80aca913b">
+      <secret-storage>memory</secret-storage>
+      <user-name>vidales_db_2015</user-name>
+      <schema-pattern>vidalesdb.*</schema-pattern>
+      <default-schemas>vidalesdb.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - fshigueru_base@fshiguerudb.crpsfajdy5o0.sa-east-1.rds.amazonaws.com" uuid="72d9ce66-6eca-4376-a428-75407f39278d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>FShigueru_db</user-name>
+      <schema-pattern>fshigueru_base.*</schema-pattern>
+      <default-schemas>fshigueru_base.*</default-schemas>
+    </data-source>
+  </component>
+</project>

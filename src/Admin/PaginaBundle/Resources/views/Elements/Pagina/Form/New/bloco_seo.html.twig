@@ -1,0 +1,43 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>{{ 'title.seo'|transchoice(0,{}, 'messagesPaginaBundle') }}</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <li class="dropdown"></li>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="row">
+            <div class="form-horizontal form-label-left">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    <div class="form-group {{ form.paginaSeo.0.descricao.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.paginaSeo.0.descricao.vars.id }}">
+                            {{ form.paginaSeo.0.descricao.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ form.paginaSeo.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form_row(form.paginaSeo.0.descricao, { 'label': false }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    <div class="form-group {{ form.paginaSeo.0.keyWord.vars.required ? 'item' : '' }}">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.paginaSeo.0.keyWord.vars.id }}">
+                            {{ form.paginaSeo.0.keyWord.vars.label|transchoice(0,{}, 'messagesCommonBundle') }}
+                            {{ form.paginaSeo.0.keyWord.vars.required ? '<span class="required">*</span>' : '' }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span class="fa fa-key form-control-feedback right" aria-hidden="true"></span>
+                            {{ form_row(form.paginaSeo.0.keyWord, { 'label': false }) }}
+                            <span class="label label-success">Após digitar o nome de uma tag, digite a tecla TAB para digitar uma nova tag.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ form_row(form.paginaSeo.0, { 'label': false }) }}

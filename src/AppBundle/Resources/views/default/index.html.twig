@@ -1,0 +1,68 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ configuracao.valor("titulo.site.completo") }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.css'
+    '@AppBundle/Resources/public/scss/style.scss'
+    combine=true
+    filter="scssphp"
+    filter='uglifycss'
+    filter='cssrewrite'
+    output='css/home/style.css'
+    %}
+        <link rel="stylesheet"  href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {#
+    filter='uglifycss'
+    combine=true
+    #}
+{% endblock %}
+
+{% block body %}
+
+    {{ include('@App/Elements/preloader.html.twig') }}
+
+    {{ include('@App/Elements/Home/header.home.html.twig') }}
+
+    {{ include('@App/Elements/Home/servicos.html.twig') }}
+
+    {{ include('@App/Elements/Home/trabalhos.html.twig') }}
+
+    {{ include('@App/Elements/Home/contato.html.twig') }}
+
+    {{ include('@App/Elements/footer.html.twig') }}
+
+    {{ include('@AdminCommon/Elements/modal/modal_load.html.twig') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@AppBundle/Resources/public/js/angular/controllers.js'
+    '@AdminCommonBundle/Resources/public/js/textarea/autosize.min.js'
+    '@AdminCommonBundle/Resources/public/js/notify/pnotify.js'
+    '@AppBundle/Resources/public/js/home/script.js'
+    '@AppBundle/Resources/public/js/teste.js'
+    combine=true
+    filter='uglifyjs2'
+    output='js/home/script.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {#
+    combine=true
+    filter='uglifyjs2'
+    #}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-76146708-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+{% endblock %}
