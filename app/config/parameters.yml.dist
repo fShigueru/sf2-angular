@@ -19,11 +19,11 @@ parameters:
     mailer_auth_mode:  login
     # A secret key that's used to generate certain security-related tokens
     secret:                 ThisTokenIsNotSoSecretChangeIt
-    amazon_aws_key: AKIAIBKYOWHUQ5JE22XQ
-    amazon_aws_secret_key: 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
+    amazon_aws_key: 
+    amazon_aws_secret_key: 
     amazon_s3_base_url: 'https://s3-sa-east-1.amazonaws.com'
-    amazon_s3_region: 'sa-east-1'
+    amazon_s3_region:
     amazon_s3_version: '1.0.0'
-    amazon_s3_bucket_name:  base-aws
+    amazon_s3_bucket_name: 
     email_image_url:        /bundles/app/images/
     email: 'filipe.shigueru@yahoo.com.br'
